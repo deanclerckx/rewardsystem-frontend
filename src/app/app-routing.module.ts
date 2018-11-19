@@ -1,7 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './_guards/auth.guard';
+
+const routes: Routes = [
+  { path: 'login', component: LoginComponent },
+
+  // otherwise redirect to home
+  { path: '**', redirectTo: '/login' }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
