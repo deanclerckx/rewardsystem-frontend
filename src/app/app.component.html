@@ -2,14 +2,23 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light navbar-custom bg-light">
   <div class="container">
-    <a class="navbar-brand" href="#"><img style="height: 35px;" src="../assets/img/logojstack.png"></a>
+    <a class="navbar-brand" href="#"><img style="height: 35px;" src="../assets/img/logojstack.png"><b> Rewards</b></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="">Login</a>
+          <a [routerLink]="['/login']" class="nav-link" href="">Log out</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/claimrewards']" class="nav-link" href="">Claim rewards</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/getrewards']" class="nav-link" href="">Earn rewards</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/admin']" class="nav-link" href="">Admin control panel</a>
         </li>
       </ul>
     </div>
@@ -21,7 +30,7 @@
 <header class="masthead text-center text-white">
   <div class="masthead-content">
     <div class="container p-5">
-      <h1 class="masthead-heading mb-0 textkleur"><img class="img-fluid" src="../assets/img/rewards.png" /></h1>
+      <h1 class="masthead-heading mb-0"><img class="img-fluid" src="../assets/img/rewards.png" /></h1>
     </div>
   </div>
 </header>
@@ -29,7 +38,6 @@
 
 
 
-<alert></alert>
 <router-outlet></router-outlet>
 
 <br/><br/><br/><br/><br/><br/><br/>

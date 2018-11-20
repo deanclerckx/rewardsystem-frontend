@@ -20,6 +20,9 @@ import { ManagetasksComponent } from './managetasks/managetasks.component';
 import { ManagerewardsComponent } from './managerewards/managerewards.component';
 import { EdittaskComponent } from './edittask/edittask.component';
 import { EditrewardComponent } from './editreward/editreward.component';
+import {AdminComponent} from './admin/admin.component';
+import { AddtaskComponent } from './addtask/addtask.component';
+import { AddrewardComponent } from './addreward/addreward.component';
 
 
 
@@ -36,7 +39,11 @@ import { EditrewardComponent } from './editreward/editreward.component';
     ManagetasksComponent,
     ManagerewardsComponent,
     EdittaskComponent,
-    EditrewardComponent
+    EditrewardComponent,
+    AdminComponent,
+    AddtaskComponent,
+    AddrewardComponent
+
   ],
   imports: [
     BrowserModule,
