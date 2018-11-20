@@ -7,8 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AuthGuard } from './_guards/auth.guard';
-import { JwtInterceptor, ErrorInterceptor } from './_helpers';
-import { AlertService, AuthenticationService, UserService } from './_services';
+import { JwtInterceptor, ErrorInterceptor, HelperFunctions } from './_helpers';
+import { AlertService, UserService, AuthenticationService } from './_services';
 import { AlertComponent } from './_directives/alert.component';
 
 import { LoginComponent } from './login/login.component';
@@ -20,6 +20,10 @@ import { ManagetasksComponent } from './managetasks/managetasks.component';
 import { ManagerewardsComponent } from './managerewards/managerewards.component';
 import { EdittaskComponent } from './edittask/edittask.component';
 import { EditrewardComponent } from './editreward/editreward.component';
+import {AdminComponent} from './admin/admin.component';
+import { AddtaskComponent } from './addtask/addtask.component';
+import { AddrewardComponent } from './addreward/addreward.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 
@@ -36,7 +40,11 @@ import { EditrewardComponent } from './editreward/editreward.component';
     ManagetasksComponent,
     ManagerewardsComponent,
     EdittaskComponent,
-    EditrewardComponent
+    EditrewardComponent,
+    AdminComponent,
+    AddtaskComponent,
+    NavbarComponent,
+    AddrewardComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +55,7 @@ import { EditrewardComponent } from './editreward/editreward.component';
   providers: [
     AuthGuard,
     AlertService,
+    HelperFunctions,
     AuthenticationService,
     UserService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
