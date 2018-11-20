@@ -15,9 +15,9 @@ import { LoginComponent } from './login/login.component';
 import { ClaimrewardsComponent } from './claimrewards/claimrewards.component';
 import { GetrewardsComponent } from './getrewards/getrewards.component';
 import { ToekennenrewardsComponent } from './toekennenrewards/toekennenrewards.component';
-import { BeheeropdrachtenComponent } from './beheeropdrachten/beheeropdrachten.component';
-import { BeheerrewardsComponent } from './beheerrewards/beheerrewards.component';
 import { KeeruitrewardsComponent } from './keeruitrewards/keeruitrewards.component';
+import { ManagetasksComponent } from './managetasks/managetasks.component';
+import { ManagerewardsComponent } from './managerewards/managerewards.component';
 
 
 
@@ -30,9 +30,9 @@ import { KeeruitrewardsComponent } from './keeruitrewards/keeruitrewards.compone
     ClaimrewardsComponent,
     GetrewardsComponent,
     ToekennenrewardsComponent,
-    BeheeropdrachtenComponent,
-    BeheerrewardsComponent,
-    KeeruitrewardsComponent
+    KeeruitrewardsComponent,
+    ManagetasksComponent,
+    ManagerewardsComponent
   ],
   imports: [
     BrowserModule,

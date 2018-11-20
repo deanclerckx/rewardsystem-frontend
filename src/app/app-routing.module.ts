@@ -9,15 +9,15 @@ import { AuthGuard } from './_guards/auth.guard';
 import { LoginComponent } from './login/login.component';
 import { ClaimrewardsComponent } from './claimrewards/claimrewards.component';
 import { GetrewardsComponent} from './getrewards/getrewards.component';
-import { BeheeropdrachtenComponent} from './beheeropdrachten/beheeropdrachten.component';
-import { BeheerrewardsComponent } from './beheerrewards/beheerrewards.component';
+import { ManagerewardsComponent } from './managerewards/managerewards.component';
+import { ManagetasksComponent} from './managetasks/managetasks.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
     { path: 'claimrewards', component: ClaimrewardsComponent },
     { path: 'getrewards', component: GetrewardsComponent },
-    { path: 'editopdrachten', component: BeheeropdrachtenComponent },
-    { path: 'editrewards', component: BeheerrewardsComponent },
+    { path: 'managetasks', component: ManagetasksComponent },
+    { path: 'managerewards', component: ManagerewardsComponent },
 
   // otherwise redirect to home
   { path: '**', redirectTo: '/login' }
