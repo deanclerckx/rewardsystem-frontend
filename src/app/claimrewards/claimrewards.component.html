@@ -10,42 +10,15 @@
         </tr>
         </thead>
         <tbody style="vertical-align: center;">
-        <tr>
-          <td>Bak bier (Coupon)</td>
-          <td>15</td>
-          <td>
-            <a href="#">
-              <img style="height: 30px;padding: 0;" src="../../assets/img/purchase.png">
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>Bol.com coupon van 25 euro</td>
-          <td>25</td>
-          <td>
-            <a href="#">
-              <img style="height: 30px;padding: 0;" src="../../assets/img/purchase.png">
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>Fles champagne</td>
-          <td>30</td>
-          <td>
-            <a href="#">
-              <img style="height: 30px;padding: 0;" src="../../assets/img/purchase.png">
-            </a>
-          </td>
-        </tr>
-        <tr>
-            <td>Reis naar aruba</td>
-            <td>3000</td>
+          <tr *ngFor="let reward of rewards">
+            <td>{{ reward.name }}</td>
+            <td>{{ reward.points }}</td>
             <td>
-                <a href="#">
-                    <img style="height: 30px;padding: 0;" src="../../assets/img/purchase.png">
-                </a>
+              <a href="#">
+                <img style="height: 30px;padding: 0;" src="../../assets/img/purchase.png">
+              </a>
             </td>
-        </tr>
+          </tr>
         </tbody>
       </table>
     </div>
