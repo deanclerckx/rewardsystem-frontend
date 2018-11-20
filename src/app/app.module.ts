@@ -14,6 +14,10 @@ import { AlertComponent } from './_directives/alert.component';
 import { LoginComponent } from './login/login.component';
 import { ClaimrewardsComponent } from './claimrewards/claimrewards.component';
 import { GetrewardsComponent } from './getrewards/getrewards.component';
+import { ToekennenrewardsComponent } from './toekennenrewards/toekennenrewards.component';
+import { BeheeropdrachtenComponent } from './beheeropdrachten/beheeropdrachten.component';
+import { BeheerrewardsComponent } from './beheerrewards/beheerrewards.component';
+import { KeeruitrewardsComponent } from './keeruitrewards/keeruitrewards.component';
 
 
 
@@ -24,7 +28,11 @@ import { GetrewardsComponent } from './getrewards/getrewards.component';
     HomepageComponent,
     LoginComponent,
     ClaimrewardsComponent,
-    GetrewardsComponent
+    GetrewardsComponent,
+    ToekennenrewardsComponent,
+    BeheeropdrachtenComponent,
+    BeheerrewardsComponent,
+    KeeruitrewardsComponent
   ],
   imports: [
     BrowserModule,
