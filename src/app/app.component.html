@@ -9,7 +9,16 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="">Login</a>
+          <a [routerLink]="['/login']" class="nav-link" href="">Login</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/claimrewards']" class="nav-link" href="">Claim rewards</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/getrewards']" class="nav-link" href="">Earn rewards</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/admin']" class="nav-link" href="">Admin control panel</a>
         </li>
       </ul>
     </div>

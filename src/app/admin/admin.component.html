@@ -1,8 +1,12 @@
 <div class="container">
   <div class="row">
-      <div class="col-lg-4 text-center"><button class="btn-admin shadow btnOrange"  type="button">Toekennen <br/> rewards</button></div>
-      <div class="col-lg-4 text-center"><button class="btn-admin shadow btnBlue"  type="button">Events <br/> beheren</button></div>
-      <div class="col-lg-4 text-center"><button class="btn-admin shadow btnOrange" type="button">Rewards <br/> beheren</button></div>
+      <div class="col-lg-4 text-center">
+          <button [routerLink]="['/']" class="btn-admin shadow btnOrange"  type="button">Toekennen <br/> rewards</button>
+      </div>
+      <div class="col-lg-4 text-center">
+          <button [routerLink]="['/managetasks']" class="btn-admin shadow btnBlue"  type="button">Events <br/> beheren</button></div>
+      <div class="col-lg-4 text-center">
+          <button [routerLink]="['/managerewards']" class="btn-admin shadow btnOrange" type="button">Rewards <br/> beheren</button></div>
   </div>
   <div class="row">
     <br/>
