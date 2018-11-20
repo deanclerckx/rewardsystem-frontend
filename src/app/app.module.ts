@@ -18,6 +18,8 @@ import { ToekennenrewardsComponent } from './toekennenrewards/toekennenrewards.c
 import { KeeruitrewardsComponent } from './keeruitrewards/keeruitrewards.component';
 import { ManagetasksComponent } from './managetasks/managetasks.component';
 import { ManagerewardsComponent } from './managerewards/managerewards.component';
+import { EdittaskComponent } from './edittask/edittask.component';
+import { EditrewardComponent } from './editreward/editreward.component';
 
 
 
@@ -32,7 +34,9 @@ import { ManagerewardsComponent } from './managerewards/managerewards.component'
     ToekennenrewardsComponent,
     KeeruitrewardsComponent,
     ManagetasksComponent,
-    ManagerewardsComponent
+    ManagerewardsComponent,
+    EdittaskComponent,
+    EditrewardComponent
   ],
   imports: [
     BrowserModule,
