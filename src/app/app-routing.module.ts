@@ -14,6 +14,7 @@ import { ManagetasksComponent} from './managetasks/managetasks.component';
 import { EdittaskComponent } from './edittask/edittask.component';
 import {EditrewardComponent} from './editreward/editreward.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import {AdminComponent} from './admin/admin.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
     { path: 'edittask', component: EdittaskComponent },
     { path: 'editreward', component: EditrewardComponent },
     { path: 'homepage', component: HomepageComponent},
+    { path: 'admin', component: AdminComponent },
 
   // otherwise redirect to home
   { path: '**', redirectTo: '/login' }
