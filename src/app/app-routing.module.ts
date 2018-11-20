@@ -15,6 +15,9 @@ import { AdminComponent } from './admin/admin.component';
 import { AddtaskComponent } from './addtask/addtask.component';
 import { AddrewardComponent } from './addreward/addreward.component';
 
+// Guards
+import { AuthGuard } from './_guards/auth.guard';
+
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'claimrewards', component: ClaimrewardsComponent, canActivate: [AuthGuard] },
