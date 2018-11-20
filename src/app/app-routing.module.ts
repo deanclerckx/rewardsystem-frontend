@@ -13,6 +13,7 @@ import { ManagerewardsComponent } from './managerewards/managerewards.component'
 import { ManagetasksComponent} from './managetasks/managetasks.component';
 import { EdittaskComponent } from './edittask/edittask.component';
 import {EditrewardComponent} from './editreward/editreward.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
     { path: 'managerewards', component: ManagerewardsComponent },
     { path: 'edittask', component: EdittaskComponent },
     { path: 'editreward', component: EditrewardComponent },
+    { path: 'homepage', component: HomepageComponent},
 
   // otherwise redirect to home
   { path: '**', redirectTo: '/login' }

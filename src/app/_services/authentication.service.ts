@@ -14,17 +14,10 @@ export class AuthenticationService {
                 if (user && user.token) {
                     // store user details and jwt token in local storage to keep user logged in between page refreshes
                     localStorage.setItem('currentUser', JSON.stringify(user));
-                    console.log(this.parseJWT(user.token));
                 }
 
                 return user;
             }));
-    }
-
-    parseJWT(token){
-        var base64Url = token.split('.')[1];
-        var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-        return JSON.parse(window.atob(base64));
     }
 
     logout() {
