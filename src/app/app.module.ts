@@ -8,7 +8,9 @@ import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
-import { AuthenticationService, UserService } from './_services';
+import { AlertService, AuthenticationService, UserService } from './_services';
+import { AlertComponent } from './_directives/alert.component';
+
 import { LoginComponent } from './login/login.component';
 import { RewardsComponent } from './rewards/rewards.component';
 
@@ -17,6 +19,7 @@ import { RewardsComponent } from './rewards/rewards.component';
 @NgModule({
   declarations: [
     AppComponent,
+    AlertComponent,
     HomepageComponent,
     LoginComponent,
     RewardsComponent
@@ -29,6 +32,7 @@ import { RewardsComponent } from './rewards/rewards.component';
   ],
   providers: [
     AuthGuard,
+    AlertService,
     AuthenticationService,
     UserService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
