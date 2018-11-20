@@ -12,7 +12,8 @@ import { AlertService, AuthenticationService, UserService } from './_services';
 import { AlertComponent } from './_directives/alert.component';
 
 import { LoginComponent } from './login/login.component';
-import { RewardsComponent } from './rewards/rewards.component';
+import { ClaimrewardsComponent } from './claimrewards/claimrewards.component';
+import { GetrewardsComponent } from './getrewards/getrewards.component';
 
 
 
@@ -22,7 +23,8 @@ import { RewardsComponent } from './rewards/rewards.component';
     AlertComponent,
     HomepageComponent,
     LoginComponent,
-    RewardsComponent
+    ClaimrewardsComponent,
+    GetrewardsComponent
   ],
   imports: [
     BrowserModule,
