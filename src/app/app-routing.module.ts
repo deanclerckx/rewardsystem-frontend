@@ -1,11 +1,8 @@
+// Modules
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-
-import { AuthGuard } from './_guards/auth.guard';
-
-
-//Importeer components
+// Components
 import { LoginComponent } from './login/login.component';
 import { ClaimrewardsComponent } from './claimrewards/claimrewards.component';
 import { GetrewardsComponent} from './getrewards/getrewards.component';
@@ -21,7 +18,7 @@ const routes: Routes = [
     { path: 'managetasks', component: ManagetasksComponent },
     { path: 'managerewards', component: ManagerewardsComponent },
     { path: 'edittask', component: EdittaskComponent },
-    { path: 'editreward', component: EditrewardComponent },
+    { path: 'editreward/:id', component: EditrewardComponent },
 
   // otherwise redirect to home
   { path: '**', redirectTo: '/login' }
