@@ -10,6 +10,7 @@ import { AuthGuard } from './_guards/auth.guard';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { AuthenticationService, UserService } from './_services';
 import { LoginComponent } from './login/login.component';
+import { RewardsComponent } from './rewards/rewards.component';
 
 
 
@@ -17,7 +18,8 @@ import { LoginComponent } from './login/login.component';
   declarations: [
     AppComponent,
     HomepageComponent,
-    LoginComponent
+    LoginComponent,
+    RewardsComponent
   ],
   imports: [
     BrowserModule,
