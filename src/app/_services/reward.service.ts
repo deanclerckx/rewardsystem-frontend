@@ -20,6 +20,10 @@ export class RewardService {
     return this.http.get<Reward[]>(environment.apiUrl + this.REWARDS_PATH);
   }
 
+  insert(reward: Reward) {
+    return this.http.post<Reward>(environment.apiUrl + this.REWARDS_PATH, reward);
+  }
+
   update(reward: Reward) {
     return this.http.put<Reward>(environment.apiUrl + this.REWARDS_PATH + reward.id, reward);
   }

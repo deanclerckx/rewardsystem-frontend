@@ -34,7 +34,7 @@ export class EditrewardComponent implements OnInit {
     });
   }
 
-  onSave() {
+  onSubmit() {
     this.rewardService.update(<Reward>{
       id: this.reward.id,
       name: this.editRewardForm.get('name').value,
@@ -42,7 +42,7 @@ export class EditrewardComponent implements OnInit {
     }).subscribe(() => this.router.navigate(['/managerewards']));
   }
 
-  // Getters voor input validatie
+  // Getters voor inputvalidatie
   get name() { return this.editRewardForm.get('name'); }
   get points() { return this.editRewardForm.get('points'); }
 }

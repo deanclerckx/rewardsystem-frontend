@@ -4,7 +4,7 @@
 
       <h2>Edit reward</h2>
 
-      <form [formGroup]="editRewardForm" (ngSubmit)="onSave()">
+      <form [formGroup]="editRewardForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="name">Reward name:</label>
           <input id="name" type="text"  class="form-control" [ngClass]="{ 'is-invalid': name.errors }" formControlName="name" required />
