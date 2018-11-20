@@ -10,8 +10,6 @@ import { User } from '../_models';
 })
 export class AuthenticationService {
 
-    user$: BehaviorSubject<User> = new BehaviorSubject(null);
-
     constructor(private http: HttpClient) { 
     }
 
@@ -27,7 +25,7 @@ export class AuthenticationService {
                 return user;
             }));
     }
-    
+
     logout() {
         // remove user from local storage to log user out
         localStorage.removeItem('currentUser');

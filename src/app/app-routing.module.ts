@@ -8,9 +8,9 @@ import { AuthGuard } from './_guards/auth.guard';
 //Importeer components
 import { LoginComponent } from './login/login.component';
 import { ClaimrewardsComponent } from './claimrewards/claimrewards.component';
-import { GetrewardsComponent} from './getrewards/getrewards.component';
+import { GetrewardsComponent } from './getrewards/getrewards.component';
 import { ManagerewardsComponent } from './managerewards/managerewards.component';
-import { ManagetasksComponent} from './managetasks/managetasks.component';
+import { ManagetasksComponent } from './managetasks/managetasks.component';
 import { EdittaskComponent } from './edittask/edittask.component';
 import { EditrewardComponent } from './editreward/editreward.component';
 import { HomepageComponent } from './homepage/homepage.component';
@@ -20,16 +20,16 @@ import { AddrewardComponent } from './addreward/addreward.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-    { path: 'claimrewards', component: ClaimrewardsComponent },
-    { path: 'getrewards', component: GetrewardsComponent },
-    { path: 'managetasks', component: ManagetasksComponent },
-    { path: 'managerewards', component: ManagerewardsComponent },
-    { path: 'edittask', component: EdittaskComponent },
-    { path: 'editreward', component: EditrewardComponent },
-    { path: 'homepage', component: HomepageComponent},
-    { path: 'admin', component: AdminComponent },
-    { path: 'addtask', component: AddtaskComponent },
-    { path: 'addreward', component: AddrewardComponent },
+  { path: 'claimrewards', component: ClaimrewardsComponent, canActivate: [AuthGuard] },
+  { path: 'getrewards', component: GetrewardsComponent, canActivate: [AuthGuard] },
+  { path: 'managetasks', component: ManagetasksComponent, canActivate: [AuthGuard] },
+  { path: 'managerewards', component: ManagerewardsComponent, canActivate: [AuthGuard] },
+  { path: 'edittask', component: EdittaskComponent, canActivate: [AuthGuard] },
+  { path: 'editreward', component: EditrewardComponent, canActivate: [AuthGuard] },
+  { path: 'homepage', component: HomepageComponent, canActivate: [AuthGuard] },
+  { path: 'admin', component: AdminComponent, canActivate: [AuthGuard] },
+  { path: 'addtask', component: AddtaskComponent, canActivate: [AuthGuard] },
+  { path: 'addreward', component: AddrewardComponent, canActivate: [AuthGuard] },
 
   // otherwise redirect to home
   { path: '**', redirectTo: '/login' }
