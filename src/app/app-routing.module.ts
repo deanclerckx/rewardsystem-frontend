@@ -1,13 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { LoginComponent } from './login/login.component';
+
 import { AuthGuard } from './_guards/auth.guard';
-import {RewardsComponent} from './rewards/rewards.component';
+
+
+//Importeer components
+import { LoginComponent } from './login/login.component';
+import { ClaimrewardsComponent } from './claimrewards/claimrewards.component';
+
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-    { path: 'rewards', component: RewardsComponent },
+    { path: 'claimrewards', component: ClaimrewardsComponent },
 
   // otherwise redirect to home
   { path: '**', redirectTo: '/login' }
