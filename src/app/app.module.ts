@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { JwtInterceptor, ErrorInterceptor, HelperFunctions } from './_helpers';
-import { AlertService, AuthenticationService, UserService } from './_services';
+import { AlertService, UserService } from './_services';
 import { AlertComponent } from './_directives/alert.component';
 
 import { LoginComponent } from './login/login.component';
@@ -47,7 +47,6 @@ import { EditrewardComponent } from './editreward/editreward.component';
   providers: [
     AuthGuard,
     AlertService,
-    AuthenticationService,
     HelperFunctions,
     UserService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
