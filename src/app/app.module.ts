@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { JwtInterceptor, ErrorInterceptor, HelperFunctions } from './_helpers';
-import { AlertService, UserService } from './_services';
+import { AlertService, UserService, AuthenticationService } from './_services';
 import { AlertComponent } from './_directives/alert.component';
 
 import { LoginComponent } from './login/login.component';
@@ -23,6 +23,7 @@ import { EditrewardComponent } from './editreward/editreward.component';
 import {AdminComponent} from './admin/admin.component';
 import { AddtaskComponent } from './addtask/addtask.component';
 import { AddrewardComponent } from './addreward/addreward.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 
@@ -42,8 +43,8 @@ import { AddrewardComponent } from './addreward/addreward.component';
     EditrewardComponent,
     AdminComponent,
     AddtaskComponent,
-    AddrewardComponent
-
+    NavbarComponent,
+    AddrewardComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,6 +56,7 @@ import { AddrewardComponent } from './addreward/addreward.component';
     AuthGuard,
     AlertService,
     HelperFunctions,
+    AuthenticationService,
     UserService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

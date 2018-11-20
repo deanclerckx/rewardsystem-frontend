@@ -14,20 +14,8 @@ export class AppComponent {
   hasUser = false;
   isAdmin = false;
 
-  constructor(private helperFunctions: HelperFunctions){}
+  constructor(private helperFunctions: HelperFunctions) { }
 
-  NgOninit(){
-    this.user = JSON.parse(localStorage.getItem('currentUser'));
-    if(this.user != null){
-      this.hasUser = true;
-
-      if(this.user.roles.includes('ADMIN')){
-       this.isAdmin = true;
-      }
-    }
-
-    console.log(this.hasUser);
-    console.log(this.user);
-    console.log(this.isAdmin);
+  NgOninit() {
   }
 }
