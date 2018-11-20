@@ -22,3 +22,7 @@
 .btnBlue:hover{
     background-color: #04AEDB
 }
+
+.cursor-pointer {
+    cursor: pointer;
+}

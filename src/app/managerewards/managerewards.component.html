@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row align-items-center">
     <div class="col-lg-12">
-      <p><a [routerLink]="['/addreward']" class="list-group-item" href="#"><i class="fas fa-plus-circle"></i> Add new</a></p>
+      <p><a [routerLink]="['/addreward']" class="list-group-item" href="#"><i class="fas fa-plus-circle"></i> Add new reward</a></p>
       <table class="table align-middle table-striped" style="vertical-align: middle;">
         <thead>
         <tr>
@@ -13,13 +13,13 @@
         </thead>
         <tbody style="vertical-align: center;">
           <tr *ngFor="let reward of rewards">
-            <td>{{ reward.name }}</td>
-            <td>{{ reward.points }}</td>
+            <td class="align-middle">{{ reward.name }}</td>
+            <td class="align-middle">{{ reward.points }}</td>
             <td>
-              <a class="list-group-item" routerLink="/editreward/{{ reward.id }}"><i class="fas fa-edit"></i></a>
+              <a class="list-group-item cursor-pointer" routerLink="/editreward/{{ reward.id }}"><i class="fas fa-edit text-primary"></i></a>
             </td>
             <td>
-              <a class="list-group-item" (click)="deleteReward(reward)"><i class="fas fa-trash-alt"></i></a>
+              <a class="list-group-item cursor-pointer" (click)="deleteReward(reward)"><i class="fas fa-trash-alt text-danger"></i></a>
             </td>
           </tr>
         </tbody>
