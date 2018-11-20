@@ -2,10 +2,18 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
+import { BehaviorSubject } from 'rxjs';
+import { User } from '../_models';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class AuthenticationService {
-    constructor(private http: HttpClient) { }
+
+    user$: BehaviorSubject<User> = new BehaviorSubject(null);
+
+    constructor(private http: HttpClient) { 
+    }
 
     login(username: string, password: string) {
         return this.http.post<any>(`${environment.apiUrl}/users/authenticate`, { username: username, password: password })
@@ -19,7 +27,7 @@ export class AuthenticationService {
                 return user;
             }));
     }
-
+    
     logout() {
         // remove user from local storage to log user out
         localStorage.removeItem('currentUser');

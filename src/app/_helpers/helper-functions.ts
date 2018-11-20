@@ -4,9 +4,8 @@ import { Injectable } from '@angular/core';
 export class HelperFunctions{
     constructor(){}
 
-    hasPermission(permission){
-        let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        let parsedJWT = this.parseJWT(currentUser.token);
+    hasPermission(user, permission){
+        let parsedJWT = this.parseJWT(user.token);
 
         let returnValue = false;
 
