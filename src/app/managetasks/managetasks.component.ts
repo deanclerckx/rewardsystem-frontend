@@ -40,5 +40,4 @@ export class ManagetasksComponent implements OnInit {
       this.tasks.splice(this.tasks.findIndex(object => object === task), 1);
     });
   }
-
 }
