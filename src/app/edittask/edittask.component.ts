@@ -38,7 +38,7 @@ export class EdittaskComponent implements OnInit {
     this.taskService.update(<Task>{
       id: this.task.id,
       name: this.editTaskForm.get('name').value,
-      points: this.editTaskForm.get('points').value
+      points: this.editTaskForm.get('points').value,
     }).subscribe(() => this.router.navigate(['/managetasks']));
   }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from '../_models';
 import { TaskService } from '../_services/task.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-managetasks',
@@ -10,7 +11,7 @@ import { TaskService } from '../_services/task.service';
 export class ManagetasksComponent implements OnInit {
   tasks: Task[];
 
-  constructor(private taskService: TaskService) { }
+  constructor(private taskService: TaskService, private router: Router) { }
 
   ngOnInit() {
     this.taskService.getAll().subscribe(tasks => {
@@ -40,5 +41,4 @@ export class ManagetasksComponent implements OnInit {
       this.tasks.splice(this.tasks.findIndex(object => object === task), 1);
     });
   }
-
 }
