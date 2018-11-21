@@ -5,4 +5,5 @@ export class User {
     lastName: string;
     permissions: string[];
     roles: string[];
+    points: number;
 }

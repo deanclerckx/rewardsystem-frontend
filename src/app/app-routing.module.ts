@@ -17,19 +17,20 @@ import { AddrewardComponent } from './addreward/addreward.component';
 
 // Guards
 import { AuthGuard } from './_guards/auth.guard';
+import { RoleGuard } from './_guards/role.guard';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'claimrewards', component: ClaimrewardsComponent, canActivate: [AuthGuard] },
   { path: 'getrewards', component: GetrewardsComponent, canActivate: [AuthGuard] },
-  { path: 'managetasks', component: ManagetasksComponent, canActivate: [AuthGuard] },
-  { path: 'managerewards', component: ManagerewardsComponent, canActivate: [AuthGuard] },
-  { path: 'edittask/:id', component: EdittaskComponent, canActivate: [AuthGuard] },
-  { path: 'editreward/:id', component: EditrewardComponent, canActivate: [AuthGuard] },
+  { path: 'managetasks', component: ManagetasksComponent, canActivate: [RoleGuard], data: {expectedRole: 'ADMIN'} },
+  { path: 'managerewards', component: ManagerewardsComponent, canActivate: [RoleGuard], data: {expectedRole: 'ADMIN'} },
+  { path: 'edittask/:id', component: EdittaskComponent, canActivate: [RoleGuard], data: {expectedRole: 'ADMIN'} },
+  { path: 'editreward/:id', component: EditrewardComponent, canActivate: [RoleGuard], data: {expectedRole: 'ADMIN'} },
   { path: 'homepage', component: HomepageComponent, canActivate: [AuthGuard] },
-  { path: 'admin', component: AdminComponent, canActivate: [AuthGuard] },
-  { path: 'addtask', component: AddtaskComponent, canActivate: [AuthGuard] },
-  { path: 'addreward', component: AddrewardComponent, canActivate: [AuthGuard] },
+  { path: 'admin', component: AdminComponent, canActivate: [RoleGuard], data: {expectedRole: 'ADMIN'}},
+  { path: 'addtask', component: AddtaskComponent, canActivate: [RoleGuard], data: {expectedRole: 'ADMIN'} },
+  { path: 'addreward', component: AddrewardComponent, canActivate: [RoleGuard], data: {expectedRole: 'ADMIN'} },
 
   // otherwise redirect to home
   { path: '**', redirectTo: '/login' }
