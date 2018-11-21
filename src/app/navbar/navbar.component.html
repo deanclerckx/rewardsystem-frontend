@@ -8,6 +8,9 @@
     <div class="collapse navbar-collapse" id="navbarResponsive" [ngbCollapse]="isCollapsed" (click)="isCollapsed = !isCollapsed">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item" *ngIf="hasUser">
+          <a [routerLink]="['/claimtasks']" class="nav-link" href="">Tasks</a>
+        </li>
+        <li class="nav-item" *ngIf="hasUser">
           <a [routerLink]="['/claimrewards']" class="nav-link" href="">Rewards</a>
         </li>
         <li class="nav-item" *ngIf="isAdmin">

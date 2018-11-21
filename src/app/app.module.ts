@@ -15,6 +15,7 @@ import { AlertComponent } from './_directives/alert.component';
 
 import { LoginComponent } from './login/login.component';
 import { ClaimrewardsComponent } from './claimrewards/claimrewards.component';
+import { ClaimtasksComponent } from './claimtasks/claimtasks.component';
 import { ToekennenrewardsComponent } from './toekennenrewards/toekennenrewards.component';
 import { KeeruitrewardsComponent } from './keeruitrewards/keeruitrewards.component';
 import { ManagetasksComponent } from './managetasks/managetasks.component';
@@ -25,6 +26,7 @@ import {AdminComponent} from './admin/admin.component';
 import { AddtaskComponent } from './addtask/addtask.component';
 import { AddrewardComponent } from './addreward/addreward.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ClaimtaskComponent } from './claimtask/claimtask.component';
 
 
 
@@ -35,6 +37,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     HomepageComponent,
     LoginComponent,
     ClaimrewardsComponent,
+    ClaimtasksComponent,
     ToekennenrewardsComponent,
     KeeruitrewardsComponent,
     ManagetasksComponent,
@@ -45,6 +48,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     AddtaskComponent,
     NavbarComponent,
     AddrewardComponent,
+    ClaimtaskComponent,
   ],
   imports: [
     BrowserModule,
