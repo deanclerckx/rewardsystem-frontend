@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AuthGuard } from './_guards/auth.guard';
+import { RoleGuard } from './_guards/role.guard';
 import { JwtInterceptor, ErrorInterceptor, HelperFunctions } from './_helpers';
 import { AlertService, UserService, AuthenticationService } from './_services';
 import { AlertComponent } from './_directives/alert.component';
@@ -56,6 +57,7 @@ import { NavbarComponent } from './navbar/navbar.component';
   ],
   providers: [
     AuthGuard,
+    RoleGuard,
     AlertService,
     HelperFunctions,
     AuthenticationService,

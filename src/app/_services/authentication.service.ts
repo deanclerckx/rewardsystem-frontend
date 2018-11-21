@@ -38,7 +38,8 @@ export class AuthenticationService {
             firstName: user.firstName,
             lastName: user.lastName,
             permissions: this.parseJWT(user.token).permissions,
-            roles: user.roles
+            roles: user.roles,
+            points: user.points,
         });
     }
 
