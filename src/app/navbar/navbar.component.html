@@ -8,16 +8,16 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item" *ngIf="hasUser">
-          <a (click)="reload()" class="nav-link" href="">Log out</a>
+          <a [routerLink]="['/getrewards']" class="nav-link" href="">Tasks</a>
         </li>
         <li class="nav-item" *ngIf="hasUser">
-          <a [routerLink]="['/claimrewards']" class="nav-link" href="">Claim rewards</a>
-        </li>
-        <li class="nav-item" *ngIf="hasUser">
-          <a [routerLink]="['/getrewards']" class="nav-link" href="">Earn rewards</a>
+          <a [routerLink]="['/claimrewards']" class="nav-link" href="">Rewards</a>
         </li>
         <li class="nav-item" *ngIf="isAdmin">
-          <a [routerLink]="['/admin']" class="nav-link" href="">Admin control panel</a>
+          <a [routerLink]="['/admin']" class="nav-link" href="">Admin</a>
+        </li>
+        <li class="nav-item" *ngIf="hasUser">
+          <a (click)="reload()" class="nav-link" href="">Log out</a>
         </li>
       </ul>
     </div>

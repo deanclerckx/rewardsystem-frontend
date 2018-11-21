@@ -8,15 +8,14 @@ import { Router } from '@angular/router';
   styles: []
 })
 export class NavbarComponent implements OnInit {
-
   hasUser = false;
   isAdmin = false;
 
-  constructor(private authenticationService: AuthenticationService, private router: Router) { }
+  constructor(private authenticationService: AuthenticationService,
+    private router: Router) { }
 
   ngOnInit() {
     this.authenticationService.userData$.subscribe(user => {
-      console.log("test", user)
       if (user != null) {
         this.hasUser = true;
 
@@ -24,10 +23,10 @@ export class NavbarComponent implements OnInit {
           this.isAdmin = true;
         }
       }
-    })
+    });
   }
 
-  reload(){
+  reload() {
     window.location.reload();
     this.authenticationService.logout();
     this.router.navigate(['/login']);
