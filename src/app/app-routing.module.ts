@@ -5,7 +5,6 @@ import { Routes, RouterModule } from '@angular/router';
 // Components
 import { LoginComponent } from './login/login.component';
 import { ClaimrewardsComponent } from './claimrewards/claimrewards.component';
-import { GetrewardsComponent } from './getrewards/getrewards.component';
 import { ManagerewardsComponent } from './managerewards/managerewards.component';
 import { ManagetasksComponent } from './managetasks/managetasks.component';
 import { EdittaskComponent } from './edittask/edittask.component';
@@ -22,7 +21,6 @@ import { RoleGuard } from './_guards/role.guard';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'claimrewards', component: ClaimrewardsComponent, canActivate: [AuthGuard] },
-  { path: 'getrewards', component: GetrewardsComponent, canActivate: [AuthGuard] },
   { path: 'managetasks', component: ManagetasksComponent, canActivate: [RoleGuard], data: {expectedRole: 'ADMIN'} },
   { path: 'managerewards', component: ManagerewardsComponent, canActivate: [RoleGuard], data: {expectedRole: 'ADMIN'} },
   { path: 'edittask/:id', component: EdittaskComponent, canActivate: [RoleGuard], data: {expectedRole: 'ADMIN'} },

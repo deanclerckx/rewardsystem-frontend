@@ -10,12 +10,11 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { RoleGuard } from './_guards/role.guard';
 import { JwtInterceptor, ErrorInterceptor, HelperFunctions } from './_helpers';
-import { AlertService, UserService, AuthenticationService } from './_services';
+import { AlertService, UserService, AuthenticationService, OrderService } from './_services';
 import { AlertComponent } from './_directives/alert.component';
 
 import { LoginComponent } from './login/login.component';
 import { ClaimrewardsComponent } from './claimrewards/claimrewards.component';
-import { GetrewardsComponent } from './getrewards/getrewards.component';
 import { ToekennenrewardsComponent } from './toekennenrewards/toekennenrewards.component';
 import { KeeruitrewardsComponent } from './keeruitrewards/keeruitrewards.component';
 import { ManagetasksComponent } from './managetasks/managetasks.component';
@@ -36,7 +35,6 @@ import { NavbarComponent } from './navbar/navbar.component';
     HomepageComponent,
     LoginComponent,
     ClaimrewardsComponent,
-    GetrewardsComponent,
     ToekennenrewardsComponent,
     KeeruitrewardsComponent,
     ManagetasksComponent,
@@ -61,6 +59,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     AlertService,
     HelperFunctions,
     AuthenticationService,
+    OrderService,
     UserService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

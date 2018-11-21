@@ -10,11 +10,7 @@ import { HelperFunctions } from './_helpers';
 export class AppComponent {
   title = 'RewardSystem';
 
-  user: User;
-  hasUser = false;
-  isAdmin = false;
-
-  constructor(private helperFunctions: HelperFunctions) { }
+  constructor() { }
 
   NgOninit() {
   }
