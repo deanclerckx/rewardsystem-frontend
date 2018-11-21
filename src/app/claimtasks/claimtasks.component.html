@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row align-items-center">
+    <div class="col-lg-12">
+      <table class="table align-middle table-striped" style="vertical-align: middle;">
+        <thead>
+          <tr>
+            <th style="width: 75%;">Task</th>
+            <th style="width: 25%;">Gained points</th>
+            <th style="width: 25%;">Claim</th>
+          </tr>
+        </thead>
+        <tbody style="vertical-align: center;">
+        <tr *ngFor="let task of tasks">
+          <td class="align-middle">{{ task.name }}</td>
+          <td class="align-middle">{{ task.points }}</td>
+          <td>
+            <a class="list-group-item cursor-pointer" routerLink="/claimtask/{{ task.id }}"><i class="far fa-arrow-alt-circle-down text-primary"></i></a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

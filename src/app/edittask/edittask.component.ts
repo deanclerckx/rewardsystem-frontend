@@ -45,5 +45,4 @@ export class EdittaskComponent implements OnInit {
   // Getters voor inputvalidatie
   get name() { return this.editTaskForm.get('name'); }
   get points() { return this.editTaskForm.get('points'); }
-
 }
