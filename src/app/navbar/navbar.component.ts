@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styles: []
 })
 export class NavbarComponent implements OnInit {
+  isCollapsed = true;
   hasUser = false;
   isAdmin = false;
 
