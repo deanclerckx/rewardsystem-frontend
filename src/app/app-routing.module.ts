@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'getrewards', component: GetrewardsComponent, canActivate: [AuthGuard] },
   { path: 'managetasks', component: ManagetasksComponent, canActivate: [AuthGuard] },
   { path: 'managerewards', component: ManagerewardsComponent, canActivate: [AuthGuard] },
-  { path: 'edittask', component: EdittaskComponent, canActivate: [AuthGuard] },
+  { path: 'edittask/:id', component: EdittaskComponent, canActivate: [AuthGuard] },
   { path: 'editreward/:id', component: EditrewardComponent, canActivate: [AuthGuard] },
   { path: 'homepage', component: HomepageComponent, canActivate: [AuthGuard] },
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuard] },
