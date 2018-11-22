@@ -12,7 +12,8 @@ import { Router } from '@angular/router';
 export class AddrewardComponent implements OnInit {
   addRewardForm = new FormGroup({
     name: new FormControl('', Validators.required),
-    points: new FormControl('', [Validators.required, Validators.pattern('[0-9]+')])
+    points: new FormControl('', [Validators.required, Validators.pattern('[0-9]+')]),
+    image: new FormControl('')
   });
 
   constructor(private rewardService: RewardService,
@@ -24,11 +25,13 @@ export class AddrewardComponent implements OnInit {
   onSubmit() {
     this.rewardService.insert(<Reward>{
       name: this.addRewardForm.get('name').value,
-      points: this.addRewardForm.get('points').value
+      points: this.addRewardForm.get('points').value,
+      imageUrl: this.addRewardForm.get('image').value
     }).subscribe(() => this.router.navigate(['/managerewards']));
   }
 
   // Getters voor inputvalidatie
   get name() { return this.addRewardForm.get('name'); }
   get points() { return this.addRewardForm.get('points'); }
+  get image() { return this.addRewardForm.get('image'); }
 }

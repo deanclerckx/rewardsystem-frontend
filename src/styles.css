@@ -31,3 +31,7 @@
     pointer-events: none;
     cursor: default;
 }
+
+.img-reward{
+    max-height: 200px;
+}

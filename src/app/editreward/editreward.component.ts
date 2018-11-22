@@ -14,7 +14,8 @@ export class EditrewardComponent implements OnInit {
 
   editRewardForm = new FormGroup({
     name: new FormControl('', Validators.required),
-    points: new FormControl('', [Validators.required, Validators.pattern('[0-9]+')])
+    points: new FormControl('', [Validators.required, Validators.pattern('[0-9]+')]),
+    image: new FormControl('')
   });
 
   constructor(private rewardService: RewardService,
@@ -29,7 +30,8 @@ export class EditrewardComponent implements OnInit {
 
       this.editRewardForm.setValue({
         name: this.reward.name,
-        points: this.reward.points
+        points: this.reward.points,
+        image: this.reward.imageUrl
       });
     });
   }
@@ -38,11 +40,13 @@ export class EditrewardComponent implements OnInit {
     this.rewardService.update(<Reward>{
       id: this.reward.id,
       name: this.editRewardForm.get('name').value,
-      points: this.editRewardForm.get('points').value
+      points: this.editRewardForm.get('points').value,
+      imageUrl: this.editRewardForm.get('image').value
     }).subscribe(() => this.router.navigate(['/managerewards']));
   }
 
   // Getters voor inputvalidatie
   get name() { return this.editRewardForm.get('name'); }
   get points() { return this.editRewardForm.get('points'); }
+  get image() { return this.editRewardForm.get('image'); }
 }

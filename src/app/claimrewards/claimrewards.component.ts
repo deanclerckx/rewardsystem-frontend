@@ -67,6 +67,9 @@ export class ClaimrewardsComponent implements OnInit {
       //user updaten
       user.points = points;
       localStorage.setItem("currentUser", JSON.stringify(user));
+      
+      //refresh
+      window.location.reload();
     }
     //anders error message
     else {
