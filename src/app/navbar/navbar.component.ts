@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from '../_services';
+import {AuthenticationService, TaskService, UserService} from '../_services';
 import { Router } from '@angular/router';
+import {User} from '../_models';
 
 @Component({
   selector: 'app-navbar',
@@ -8,6 +9,7 @@ import { Router } from '@angular/router';
   styles: []
 })
 export class NavbarComponent implements OnInit {
+  currentuser:User
   isCollapsed = true;
   hasUser = false;
   isAdmin = false;
@@ -15,8 +17,10 @@ export class NavbarComponent implements OnInit {
   constructor(private authenticationService: AuthenticationService,
     private router: Router) { }
 
+
   ngOnInit() {
     this.authenticationService.userData$.subscribe(user => {
+      this.currentuser = user;
       if (user != null) {
         this.hasUser = true;
 
@@ -25,6 +29,7 @@ export class NavbarComponent implements OnInit {
         }
       }
     });
+
   }
 
   reload() {

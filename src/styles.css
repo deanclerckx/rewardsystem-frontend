@@ -26,3 +26,8 @@
 .cursor-pointer {
     cursor: pointer;
 }
+
+.inactiveLink {
+    pointer-events: none;
+    cursor: default;
+}
