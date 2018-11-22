@@ -3,11 +3,11 @@ import { Task } from '../_models';
 import { TaskService } from '../_services/task.service';
 
 @Component({
-  selector: 'app-managetasks',
-  templateUrl: './managetasks.component.html',
-  styleUrls: ['./managetasks.component.css']
+  selector: 'app-claimtasks',
+  templateUrl: './claimtasks.component.html',
+  styleUrls: ['./claimtasks.component.css']
 })
-export class ManagetasksComponent implements OnInit {
+export class ClaimtasksComponent implements OnInit {
   tasks: Task[];
 
   constructor(private taskService: TaskService) { }
@@ -30,14 +30,6 @@ export class ManagetasksComponent implements OnInit {
 
         return 0;
       });
-    });
-  }
-
-  deleteTask(task: Task) {
-    this.taskService.delete(task.id).subscribe(() => {
-      // Verwijder deze task meteen uit de array
-      // Refresh is nu niet meer nodig
-      this.tasks.splice(this.tasks.findIndex(object => object === task), 1);
     });
   }
 }

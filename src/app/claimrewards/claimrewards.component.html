@@ -1,20 +1,27 @@
 <div class="container">
   <div class="row align-items-center">
     <div class="col-lg-12">
+      <alert></alert>
+    </div>
+    <div class="col-lg-12">
       <table class="table align-middle table-striped" style="vertical-align: middle;">
         <thead>
-        <tr>
-          <th style="width: 75%;">Reward</th>
-          <th style="width: 25%;">Required Points</th>
-          <th style="width: 25%;">Purchase</th>
-        </tr>
+          <tr>
+            <th style="width: 75%;">Reward</th>
+            <th style="width: 25%;">Required Points</th>
+            <th style="width: 25%;">Purchase</th>
+          </tr>
         </thead>
         <tbody style="vertical-align: center;">
           <tr *ngFor="let reward of rewards">
             <td>{{ reward.name }}</td>
             <td>{{ reward.points }}</td>
             <td>
+<<<<<<< HEAD
                 <a class="list-group-item" href="#"><i class="far fa-money-bill-alt"></i></a>
+=======
+              <button type="button" class="btn btn-outline-primary" (click)="orderReward(reward)"><i class="fas fa-shopping-cart"></i></button>
+>>>>>>> ac8fb18ed86a9f05c785b6871a46cde5fb877001
             </td>
           </tr>
         </tbody>

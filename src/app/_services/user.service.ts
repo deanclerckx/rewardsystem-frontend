@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 
 import { User } from '../_models';
-import { Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class UserService {
@@ -22,7 +21,7 @@ export class UserService {
     }
 
     update(user: User) {
-        return this.http.put(`${environment.apiUrl}/users/` + user.id, user);
+        return this.http.put<User>(`${environment.apiUrl}/users/` + user.id, user);
     }
 
     delete(id: number) {

@@ -1,57 +1,27 @@
 <div class="container">
   <div class="row align-items-center">
     <div class="col-lg-12">
-      <p><a [routerLink]="['/addreward']" class="list-group-item" href="#"><i class="fas fa-plus-circle"></i> Add new</a></p>
+      <p><a [routerLink]="['/addreward']" class="list-group-item"><i class="fas fa-plus-circle"></i> Add new reward</a></p>
       <table class="table align-middle table-striped" style="vertical-align: middle;">
         <thead>
-        <tr>
-          <th>Reward</th>
-          <th style="width: 15%;">Points required</th>
-          <th style="width: 7%;">Edit</th>
-          <th style="width: 7%;">Delete</th>
-        </tr>
+          <tr>
+            <th>Reward name</th>
+            <th style="width: 15%;">Required points</th>
+            <th style="width: 7%;">Edit</th>
+            <th style="width: 7%;">Delete</th>
+          </tr>
         </thead>
         <tbody style="vertical-align: center;">
-        <tr>
-          <td>Bak bier</td>
-          <td>15</td>
-          <td>
-            <a class="list-group-item" href="#"><i class="fas fa-edit"></i></a>
-          </td>
-          <td>
-            <a class="list-group-item" href="#"><i class="fas fa-trash-alt"></i></a>
-          </td>
-        </tr>
-        <tr>
-          <td>Bol.com coupon</td>
-          <td>25</td>
-          <td>
-            <a class="list-group-item" href="#"><i class="fas fa-edit"></i></a>
-          </td>
-          <td>
-            <a class="list-group-item" href="#"><i class="fas fa-trash-alt"></i></a>
-          </td>
-        </tr>
-        <tr>
-          <td>Fles champagne</td>
-          <td>30</td>
-          <td>
-            <a class="list-group-item" href="#"><i class="fas fa-edit"></i></a>
-          </td>
-          <td>
-            <a class="list-group-item" href="#"><i class="fas fa-trash-alt"></i></a>
-          </td>
-        </tr>
-        <tr>
-          <td>Reis naar aruba</td>
-          <td>3000</td>
-          <td>
-            <a class="list-group-item" href="#"><i class="fas fa-edit"></i></a>
-          </td>
-          <td>
-            <a class="list-group-item" href="#"><i class="fas fa-trash-alt"></i></a>
-          </td>
-        </tr>
+          <tr *ngFor="let reward of rewards">
+            <td class="align-middle">{{ reward.name }}</td>
+            <td class="align-middle">{{ reward.points }}</td>
+            <td>
+              <a class="list-group-item cursor-pointer" routerLink="/editreward/{{ reward.id }}"><i class="fas fa-edit text-primary"></i></a>
+            </td>
+            <td>
+              <a class="list-group-item cursor-pointer" (click)="deleteReward(reward)"><i class="fas fa-trash-alt text-danger"></i></a>
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>

@@ -5,14 +5,17 @@ import { environment } from '../../environments/environment';
 import { BehaviorSubject } from 'rxjs';
 import { User } from '../_models';
 
-@Injectable({
-    providedIn: 'root'
-})
+@Injectable()
 export class AuthenticationService {
 
-    user$: BehaviorSubject<User> = new BehaviorSubject(null);
+    userData$: BehaviorSubject<User> = new BehaviorSubject(null);
 
-    constructor(private http: HttpClient) { 
+    constructor(private http: HttpClient) {
+        const user = JSON.parse(localStorage.getItem('currentUser'));
+        console.log(user);
+        if (user != null) {
+            this.setUserData(user);
+        }
     }
 
     login(username: string, password: string) {
@@ -22,14 +25,34 @@ export class AuthenticationService {
                 if (user && user.token) {
                     // store user details and jwt token in local storage to keep user logged in between page refreshes
                     localStorage.setItem('currentUser', JSON.stringify(user));
+                    this.setUserData(user);
                 }
 
                 return user;
             }));
     }
-    
+
+    setUserData(user) {
+        this.userData$.next({
+            id: user._id,
+            username: user.username,
+            firstName: user.firstName,
+            lastName: user.lastName,
+            permissions: this.parseJWT(user.token).permissions,
+            roles: user.roles,
+            points: user.points,
+        });
+    }
+
+    parseJWT(token) {
+        var base64Url = token.split('.')[1];
+        var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        return JSON.parse(window.atob(base64));
+    }
+
     logout() {
         // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
+        this.userData$ = new BehaviorSubject(null);
     }
 }

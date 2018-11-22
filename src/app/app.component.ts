@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { User } from './_models';
+import { HelperFunctions } from './_helpers';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'RewardSystem';
+
+  constructor() { }
+
+  NgOninit() {
+  }
 }
