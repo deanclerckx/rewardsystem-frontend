@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row align-items-center">
+    <div class="col-lg-12">
+      <table class="table align-middle table-striped" style="vertical-align: middle;">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th style="width: 50%;">Task</th>
+              <th>User</th>
+              <th style="width: 6%;">Approve</th>
+            </tr>
+          </thead>
+        <tbody style="vertical-align: center;">
+          <tr *ngFor="let unApprovedFinishedTask of unApprovedFinishedTasks">
+            <td class="align-middle">{{ unApprovedFinishedTask.date | date:'dd/MM/yy - HH:mm' }}</td>
+            <td class="align-middle">{{ unApprovedFinishedTask.task.name }}</td>
+            <td class="align-middle">TO DO</td>
+            <td>
+              <a class="list-group-item cursor-pointer" routerLink="/approvefinishedtask/{{ unApprovedFinishedTask.id }}"><i class="fas fa-gavel text-primary"></i></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

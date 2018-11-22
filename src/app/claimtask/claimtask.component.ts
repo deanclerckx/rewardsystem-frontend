@@ -48,8 +48,7 @@ export class ClaimtaskComponent implements OnInit {
         name: this.task.name,
         points: this.task.points
       },
-      explanation: this.claimTaskForm.get('explanation').value,
-      isApproved: false
+      explanation: this.claimTaskForm.get('explanation').value
     }).subscribe(() => this.router.navigate(['/claimtasks']));
   }
 

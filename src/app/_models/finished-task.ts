@@ -7,4 +7,5 @@ export class FinishedTask {
     };
     explanation: string;
     isApproved: boolean;
+    date: Date;
 }

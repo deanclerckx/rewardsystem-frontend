@@ -15,6 +15,8 @@ import { AdminComponent } from './admin/admin.component';
 import { AddtaskComponent } from './addtask/addtask.component';
 import { AddrewardComponent } from './addreward/addreward.component';
 import { ClaimtaskComponent } from './claimtask/claimtask.component';
+import { ManagefinishedtasksComponent } from './managefinishedtasks/managefinishedtasks.component';
+import { ApprovefinishedtaskComponent } from './approvefinishedtask/approvefinishedtask.component';
 
 // Guards
 import { AuthGuard } from './_guards/auth.guard';
@@ -33,6 +35,8 @@ const routes: Routes = [
   { path: 'addtask', component: AddtaskComponent, canActivate: [RoleGuard], data: {expectedRole: 'ADMIN'} },
   { path: 'addreward', component: AddrewardComponent, canActivate: [RoleGuard], data: {expectedRole: 'ADMIN'} },
   { path: 'claimtask/:id', component: ClaimtaskComponent, canActivate: [AuthGuard] },
+  { path: 'managefinishedtasks', component: ManagefinishedtasksComponent, canActivate: [RoleGuard], data: {expectedRole: 'ADMIN'} },
+  { path: 'approvefinishedtask/:id', component: ApprovefinishedtaskComponent, canActivate: [RoleGuard], data: {expectedRole: 'ADMIN'} },
 
   { path: '**', redirectTo: '/login' }
 ];
