@@ -9,7 +9,7 @@ import {User} from '../_models';
   styles: []
 })
 export class NavbarComponent implements OnInit {
-  currentuser:User
+  currentuser: User
   isCollapsed = true;
   hasUser = false;
   isAdmin = false;

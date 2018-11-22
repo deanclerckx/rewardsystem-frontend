@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
             .subscribe(
                 data => {
                     this.alertService.success('Login successful', true);
-                    this.router.navigate(['/claimrewards']);
+                    this.router.navigate(['/homepage']);
                     window.location.reload();
                 },
                 error => {
