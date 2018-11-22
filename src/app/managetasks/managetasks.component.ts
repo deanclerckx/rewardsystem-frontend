@@ -5,7 +5,7 @@ import { TaskService } from '../_services/task.service';
 @Component({
   selector: 'app-managetasks',
   templateUrl: './managetasks.component.html',
-  styleUrls: ['./managetasks.component.css']
+  styles: []
 })
 export class ManagetasksComponent implements OnInit {
   tasks: Task[];

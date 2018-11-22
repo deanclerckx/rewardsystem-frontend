@@ -5,7 +5,7 @@ import { RewardService } from '../_services/reward.service';
 @Component({
   selector: 'app-managerewards',
   templateUrl: './managerewards.component.html',
-  styleUrls: ['./managerewards.component.css']
+  styles: []
 })
 export class ManagerewardsComponent implements OnInit {
   rewards: Reward[];

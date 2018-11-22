@@ -8,7 +8,7 @@ import { UserService, AlertService } from '../_services';
 @Component({
   selector: 'app-claimrewards',
   templateUrl: './claimrewards.component.html',
-  styleUrls: ['./claimrewards.component.css']
+  styles: []
 })
 export class ClaimrewardsComponent implements OnInit {
   rewards: Reward[];

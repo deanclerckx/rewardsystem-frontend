@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-addreward',
   templateUrl: './addreward.component.html',
-  styleUrls: ['./addreward.component.css']
+  styles: []
 })
 export class AddrewardComponent implements OnInit {
   addRewardForm = new FormGroup({

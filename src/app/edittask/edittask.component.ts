@@ -7,7 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-edittask',
   templateUrl: './edittask.component.html',
-  styleUrls: ['./edittask.component.css']
+  styles: []
 })
 export class EdittaskComponent implements OnInit {
   task: Task;

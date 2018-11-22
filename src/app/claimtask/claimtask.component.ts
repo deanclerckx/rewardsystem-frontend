@@ -8,7 +8,7 @@ import { FinishedTaskService } from '../_services/finished-task.service';
 @Component({
   selector: 'app-claimtask',
   templateUrl: './claimtask.component.html',
-  styleUrls: ['./claimtask.component.css']
+  styles: []
 })
 export class ClaimtaskComponent implements OnInit {
   task: Task;

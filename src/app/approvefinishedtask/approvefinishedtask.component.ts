@@ -8,7 +8,7 @@ import { UserService } from '../_services';
 @Component({
   selector: 'app-approvefinishedtask',
   templateUrl: './approvefinishedtask.component.html',
-  styleUrls: []
+  styles: []
 })
 export class ApprovefinishedtaskComponent implements OnInit {
   finishedTask: FinishedTask;
