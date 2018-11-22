@@ -16,6 +16,7 @@ import { AddtaskComponent } from './addtask/addtask.component';
 import { AddrewardComponent } from './addreward/addreward.component';
 import { ClaimtaskComponent } from './claimtask/claimtask.component';
 import { ManagefinishedtasksComponent } from './managefinishedtasks/managefinishedtasks.component';
+import { ManageordersComponent } from './manageorders/manageorders.component';
 import { ApprovefinishedtaskComponent } from './approvefinishedtask/approvefinishedtask.component';
 
 // Guards
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'claimtasks', component: ClaimtasksComponent, canActivate: [AuthGuard] },
   { path: 'managetasks', component: ManagetasksComponent, canActivate: [RoleGuard], data: {expectedRole: 'ADMIN'} },
   { path: 'managerewards', component: ManagerewardsComponent, canActivate: [RoleGuard], data: {expectedRole: 'ADMIN'} },
+  { path: 'manageorders', component: ManageordersComponent, canActivate: [RoleGuard], data: {expectedRole: 'ADMIN'}},
   { path: 'edittask/:id', component: EdittaskComponent, canActivate: [RoleGuard], data: {expectedRole: 'ADMIN'} },
   { path: 'editreward/:id', component: EditrewardComponent, canActivate: [RoleGuard], data: {expectedRole: 'ADMIN'} },
   { path: 'homepage', component: HomepageComponent, canActivate: [AuthGuard] },

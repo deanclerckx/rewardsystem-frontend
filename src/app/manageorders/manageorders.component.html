@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-12">
+        <table class="table align-middle table-striped" style="vertical-align: middle;">
+          <thead>
+            <tr>
+              <th style="width: 75%;">Reward</th>
+              <th style="width: 25%;">User</th>
+              <th style="width: 25%;">Processed?</th>
+            </tr>
+          </thead>
+          <tbody style="vertical-align: center;">
+          <tr *ngFor="let order of orders; let i = index">
+            <td class="align-middle">{{ order.reward.name }}</td>
+            <td class="align-middle">{{ users[i] }}</td>
+            <td>
+                <button *ngIf="order.isProcessed" type="button" class="btn btn-outline-success" (click)="toggleProcessed(order)"><i class="fas fa-check"></i></button>
+                <button *ngIf="!order.isProcessed" type="button" class="btn btn-outline-danger" (click)="toggleProcessed(order)"><i class="fas fa-check"></i></button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
