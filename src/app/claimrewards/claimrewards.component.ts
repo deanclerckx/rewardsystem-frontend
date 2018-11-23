@@ -23,14 +23,14 @@ export class ClaimrewardsComponent implements OnInit {
 
       // Sorteer alfabetisch
       this.rewards.sort((a, b) => {
-        const nameA = a.name.toUpperCase();
-        const nameB = b.name.toUpperCase();
+        const nameA = a.points.toString();
+        const nameB = b.points.toString();
 
         if (nameA < nameB) {
-          return -1;
+          return 1;
         }
         if (nameA > nameB) {
-          return 1;
+          return -1;
         }
 
         return 0;
@@ -74,6 +74,7 @@ export class ClaimrewardsComponent implements OnInit {
     //anders error message
     else {
       console.log('test');
+      document.body.scrollTop = document.documentElement.scrollTop = 0;
       this.alertService.error("Niet genoeg points!");
     }
   }
