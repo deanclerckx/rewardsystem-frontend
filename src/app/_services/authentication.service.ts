@@ -38,6 +38,7 @@ export class AuthenticationService {
             username: user.username,
             firstName: user.firstName,
             lastName: user.lastName,
+            token: user.token,
             permissions: this.parseJWT(user.token).permissions,
             roles: user.roles,
             points: user.points,

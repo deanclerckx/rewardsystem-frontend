@@ -3,7 +3,7 @@ import { RewardService } from '../_services/reward.service';
 import { Reward } from '../_models/reward';
 import { OrderService } from '../_services/order.service';
 import { User, Order } from '../_models';
-import { UserService, AlertService } from '../_services';
+import { UserService, AlertService, AuthenticationService } from '../_services';
 
 @Component({
   selector: 'app-claimrewards',
@@ -15,7 +15,7 @@ export class ClaimrewardsComponent implements OnInit {
   reward: Reward;
 
   constructor(public rewardService: RewardService, private orderService: OrderService, 
-    private userService: UserService, private alertService: AlertService) { }
+    private userService: UserService, private alertService: AlertService, private authenticationService: AuthenticationService) { }
 
   ngOnInit() {
     this.rewardService.getAll().subscribe(rewards => {
@@ -67,9 +67,7 @@ export class ClaimrewardsComponent implements OnInit {
       //user updaten
       user.points = points;
       localStorage.setItem("currentUser", JSON.stringify(user));
-      
-      //refresh
-      window.location.reload();
+      this.authenticationService.setUserData(user);
     }
     //anders error message
     else {
