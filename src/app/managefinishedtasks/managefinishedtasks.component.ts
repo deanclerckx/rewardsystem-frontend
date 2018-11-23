@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FinishedTask, User } from '../_models';
+import { FinishedTask } from '../_models';
 import { FinishedTaskService } from '../_services/finished-task.service';
-import { UserService } from '../_services';
 
 @Component({
   selector: 'app-managefinishedtasks',
@@ -22,6 +21,11 @@ export class ManagefinishedtasksComponent implements OnInit {
           this.unApprovedFinishedTasks.push(finishedTask);
         }
       }
+
+      // Sorteer op datum
+      this.unApprovedFinishedTasks.sort((a, b) => {
+        return a.date < b.date ? -1 : a.date > b.date ? 1 : 0;
+      });
     });
   }
 }
