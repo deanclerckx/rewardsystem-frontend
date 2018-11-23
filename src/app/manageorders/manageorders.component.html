@@ -4,13 +4,15 @@
         <table class="table align-middle table-striped" style="vertical-align: middle;">
           <thead>
             <tr>
-              <th style="width: 75%;">Reward</th>
-              <th style="width: 25%;">User</th>
-              <th style="width: 25%;">Processed?</th>
+              <th>Date</th>
+              <th>Reward</th>
+              <th>User</th>
+              <th style="width: 10%;">Processed?</th>
             </tr>
           </thead>
           <tbody style="vertical-align: center;">
           <tr *ngFor="let order of orders; let i = index">
+            <td class="align-middle">{{ order.date | date:'dd/MM/yy - HH:mm' }}</td>
             <td class="align-middle">{{ order.reward.name }}</td>
             <td class="align-middle">{{ users[i] }}</td>
             <td>

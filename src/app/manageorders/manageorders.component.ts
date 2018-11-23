@@ -14,37 +14,24 @@ export class ManageordersComponent implements OnInit {
   constructor(private orderService: OrderService, private userService: UserService) { }
 
   ngOnInit() {
-    this.orderService.getAll().subscribe(order => {
-      this.orders = order;
+    this.orderService.getAll().subscribe(orders => {
+      this.orders = orders;
 
-      //user ohpalen per order
-      for(let order of this.orders){
+      // User ophalen per order
+      for (const order of this.orders) {
         this.userService.getById(order.userKey).subscribe(user => {
-          console.log(user);
           this.users.push(user.firstName + ' ' + user.lastName);
-        })
+        });
       }
 
-      console.log(this.users);
-
-      // Sorteer alfabetisch
-      this.orders.sort((a, b) => {
-        const nameA = a.reward.name.toUpperCase();
-        const nameB = b.reward.name.toUpperCase();
-
-        if (nameA < nameB) {
-          return -1;
-        }
-        if (nameA > nameB) {
-          return 1;
-        }
-
-        return 0;
-      });
+      // Sorteer op datum
+      // this.orders.sort((a, b) => {
+      //   return a.date < b.date ? -1 : a.date > b.date ? 1 : 0;
+      // });
     });
   }
 
-  toggleProcessed(order: Order){
+  toggleProcessed(order: Order) {
     order.isProcessed = !order.isProcessed;
 
     this.orderService.update(<Order>{
@@ -52,5 +39,4 @@ export class ManageordersComponent implements OnInit {
       isProcessed: order.isProcessed
     }).subscribe();
   }
-
 }
