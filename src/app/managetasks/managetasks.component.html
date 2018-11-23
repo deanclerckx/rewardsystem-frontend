@@ -19,7 +19,7 @@
               <a class="list-group-item cursor-pointer" routerLink="/edittask/{{ task.id }}"><i class="fas fa-edit text-primary"></i></a>
             </td>
             <td>
-              <a class="list-group-item cursor-pointer" (click)="deleteTask(task)"><i class="fas fa-trash-alt text-danger"></i></a>
+              <a class="list-group-item cursor-pointer" (click)="onClickDeleteTask(content, task)"><i class="fas fa-trash-alt text-danger"></i></a>
             </td>
           </tr>
         </tbody>
@@ -27,3 +27,19 @@
     </div>
   </div>
 </div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Task deletion</h4>
+    <button type="button" class="close" (click)="modal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Are you sure you want to delete this task?</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss()">Cancel</button>
+    <button type="button" class="btn btn-danger" (click)="modal.close()">Confirm</button>
+  </div>
+</ng-template>

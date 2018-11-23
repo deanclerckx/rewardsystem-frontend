@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Reward } from '../_models/reward';
 import { RewardService } from '../_services/reward.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-managerewards',
@@ -10,7 +11,8 @@ import { RewardService } from '../_services/reward.service';
 export class ManagerewardsComponent implements OnInit {
   rewards: Reward[];
 
-  constructor(private rewardService: RewardService) { }
+  constructor(private rewardService: RewardService,
+    private modalService: NgbModal) { }
 
   ngOnInit() {
     this.rewardService.getAll().subscribe(rewards => {
@@ -33,7 +35,16 @@ export class ManagerewardsComponent implements OnInit {
     });
   }
 
-  deleteReward(reward: Reward) {
+  onClickDeleteReward(content, reward: Reward) {
+    this.modalService.open(content, { centered: true }).result.then(
+      // Indien confirmed, delete reward
+      () => this.deleteReward(reward),
+      // Indien dismissed, doe niets
+      () => {}
+    );
+  }
+
+  private deleteReward(reward: Reward) {
     this.rewardService.delete(reward.id).subscribe(() => {
       // Verwijder deze reward meteen uit de array
       // Refresh is nu niet meer nodig

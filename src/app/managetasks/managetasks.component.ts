@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from '../_models';
 import { TaskService } from '../_services/task.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-managetasks',
@@ -10,7 +11,8 @@ import { TaskService } from '../_services/task.service';
 export class ManagetasksComponent implements OnInit {
   tasks: Task[];
 
-  constructor(private taskService: TaskService) { }
+  constructor(private taskService: TaskService,
+    private modalService: NgbModal) { }
 
   ngOnInit() {
     this.taskService.getAll().subscribe(tasks => {
@@ -33,7 +35,16 @@ export class ManagetasksComponent implements OnInit {
     });
   }
 
-  deleteTask(task: Task) {
+  onClickDeleteTask(content, task: Task) {
+    this.modalService.open(content, { centered: true }).result.then(
+      // Indien confirmed, delete task
+      () => this.deleteTask(task),
+      // Indien dismissed, doe niets
+      () => {}
+    );
+  }
+
+  private deleteTask(task: Task) {
     this.taskService.delete(task.id).subscribe(() => {
       // Verwijder deze task meteen uit de array
       // Refresh is nu niet meer nodig
