@@ -12,7 +12,7 @@
           <a class="nav-link inactiveLink" href="">Points: {{ currentuser.points }}</a>
         </li>
         <li class="nav-item" *ngIf="hasUser">
-          <a [routerLink]="['/homepage']" class="nav-link" href="">Homepage</a>
+          <a [routerLink]="['/overview']" class="nav-link" href="">Overview</a>
         </li>
         <li class="nav-item" *ngIf="hasUser">
           <a [routerLink]="['/claimtasks']" class="nav-link" href="">Tasks</a>
