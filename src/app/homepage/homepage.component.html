@@ -13,41 +13,50 @@
       <table class="table align-middle table-striped" style="vertical-align: middle;">
         <thead>
         <tr>
-          <th style="width: 40%;">Finished Task</th>
-          <th style="width: 20%;">Gained points</th>
-          <th style="width: 20%;">Explanation</th>
+          <th style="width: 30%;">Finished Task</th>
+          <th style="width: 15%;">Gained points</th>
+          <th style="width: 35%;">Explanation</th>
           <th style="width: 20%;">Status</th>
         </tr>
         </thead>
         <tbody style="vertical-align: center;">
+        <tr>
+            <td *ngIf="finishedtasks?.length < 1">
+                There's no data
+            </td>
+        </tr>
         <tr *ngFor="let finishedtask of finishedtasks">
           <td class="align-middle">{{ finishedtask.task.name }}</td>
           <td class="align-middle">{{ finishedtask.task.points }}</td>
           <td class="align-middle">{{ finishedtask.explanation }}</td>
-          <td class="align-middle">{{ finishedtask.isApproved }}</td>
-        </tr>
+          <td class="align-middle">{{ finishedtask.isApproved == null ? "Pending": (finishedtask.isApproved == true ? 'Approved' : 'Denied') }}</td>
         </tbody>
       </table>
-
         <hr/>
+        <br/><br/><br/>
 
         <table class="table align-middle table-striped" style="vertical-align: middle;">
             <thead>
             <tr>
-                <th style="width: 50%;">Claimed rewards</th>
-                <th style="width: 25%;">Points</th>
-                <th style="width: 25%;">Date</th>
+                <th style="width: 30%;">Claimed rewards</th>
+                <th style="width: 15%;">Spent Points</th>
+                <th style="width: 35%;">Date</th>
+                <th style="width: 20%;">Status</th>
             </tr>
             </thead>
             <tbody style="vertical-align: center;">
+            <td *ngIf="finishedtasks?.length < 1">
+                There's no data
+            </td>
             <tr *ngFor="let order of orders">
                 <td class="align-middle">{{ order.reward.name }}</td>
                 <td class="align-middle">{{ order.reward.points }}</td>
                 <td class="align-middle">{{ order.date }}</td>
+                <td class="align-middle">{{ order.isProcessed == true ? 'Processed' : 'Pending' }}</td>
             </tr>
             </tbody>
         </table>
-
+        <hr/>
 
 
     </div>
