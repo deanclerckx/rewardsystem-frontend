@@ -40,7 +40,7 @@ const routes: Routes = [
   { path: 'managefinishedtasks', component: ManagefinishedtasksComponent, canActivate: [RoleGuard], data: {expectedRole: 'ADMIN'} },
   { path: 'approvefinishedtask/:id', component: ApprovefinishedtaskComponent, canActivate: [RoleGuard], data: {expectedRole: 'ADMIN'} },
 
-  { path: '**', redirectTo: '/login' }
+  { path: '**', redirectTo: '/overview' }
 ];
 
 @NgModule({
