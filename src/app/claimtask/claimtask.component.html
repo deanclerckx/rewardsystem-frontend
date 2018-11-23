@@ -1,33 +1,33 @@
 <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-12">
-  
-        <h2>Claim task</h2>
-  
-        <form [formGroup]="claimTaskForm" (ngSubmit)="onSubmit()">
-          <div class="form-group">
-            <label for="name">Task name:</label>
-            <input id="name" type="text"  class="form-control" formControlName="name" readonly />
-          </div>
-  
-          <div class="form-group">
-            <label for="points">Gained points:</label>
-            <input id="points" type="text" class="form-control" formControlName="points" readonly />
-          </div>
+  <div class="row align-items-center">
+    <div class="col-lg-12">
 
-          <div class="form-group">
-            <label for="explanation">Explanation:</label>
-            <textarea id="explanation" class="form-control" [ngClass]="{ 'is-invalid': explanation.invalid && (explanation.dirty || explanation.touched) }" rows="2" formControlName="explanation" required></textarea>
-            <div *ngIf="explanation.invalid && (explanation.dirty || explanation.touched)" class="invalid-feedback">
-                <div *ngIf="explanation.errors.required">Explanation is required.</div>
-              </div>
-          </div>
+      <h2>Claim task</h2>
 
-          <div class="form-group">
-            <input type="submit" class="btn btn-primary" [disabled]="claimTaskForm.invalid" value="Save" />
-            <a [routerLink]="['/claimtasks']" class="btn">Cancel</a>
-          </div>
-        </form>
-      </div>
+      <form [formGroup]="claimTaskForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Task name:</label>
+          <input id="name" type="text"  class="form-control" formControlName="name" readonly />
+        </div>
+
+        <div class="form-group">
+          <label for="points">Gained points:</label>
+          <input id="points" type="text" class="form-control" formControlName="points" readonly />
+        </div>
+
+        <div class="form-group">
+          <label for="explanation">Explanation:</label>
+          <textarea id="explanation" class="form-control" [ngClass]="{ 'is-invalid': explanation.invalid && (explanation.dirty || explanation.touched) }" rows="2" formControlName="explanation" required></textarea>
+          <div *ngIf="explanation.invalid && (explanation.dirty || explanation.touched)" class="invalid-feedback">
+              <div *ngIf="explanation.errors.required">Explanation is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+          <input type="submit" class="btn btn-primary" [disabled]="claimTaskForm.invalid" value="Save" />
+          <a [routerLink]="['/claimtasks']" class="btn">Cancel</a>
+        </div>
+      </form>
     </div>
   </div>
+</div>

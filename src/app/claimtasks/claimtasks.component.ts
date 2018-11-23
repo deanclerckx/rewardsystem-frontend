@@ -5,7 +5,7 @@ import { TaskService } from '../_services/task.service';
 @Component({
   selector: 'app-claimtasks',
   templateUrl: './claimtasks.component.html',
-  styleUrls: ['./claimtasks.component.css']
+  styles: []
 })
 export class ClaimtasksComponent implements OnInit {
   tasks: Task[];

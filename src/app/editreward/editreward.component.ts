@@ -7,7 +7,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 @Component({
   selector: 'app-editreward',
   templateUrl: './editreward.component.html',
-  styleUrls: ['./editreward.component.css']
+  styles: []
 })
 export class EditrewardComponent implements OnInit {
   reward: Reward;

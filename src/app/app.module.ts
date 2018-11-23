@@ -26,6 +26,8 @@ import { AddrewardComponent } from './addreward/addreward.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ClaimtaskComponent } from './claimtask/claimtask.component';
 import { ManageordersComponent } from './manageorders/manageorders.component';
+import { ManagefinishedtasksComponent } from './managefinishedtasks/managefinishedtasks.component';
+import { ApprovefinishedtaskComponent } from './approvefinishedtask/approvefinishedtask.component';
 
 
 
@@ -47,6 +49,8 @@ import { ManageordersComponent } from './manageorders/manageorders.component';
     AddrewardComponent,
     ClaimtaskComponent,
     ManageordersComponent,
+    ManagefinishedtasksComponent,
+    ApprovefinishedtaskComponent,
   ],
   imports: [
     BrowserModule,

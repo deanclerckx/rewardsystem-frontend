@@ -8,7 +8,7 @@ import { FinishedTaskService } from '../_services/finished-task.service';
 @Component({
   selector: 'app-claimtask',
   templateUrl: './claimtask.component.html',
-  styleUrls: ['./claimtask.component.css']
+  styles: []
 })
 export class ClaimtaskComponent implements OnInit {
   task: Task;
@@ -48,8 +48,7 @@ export class ClaimtaskComponent implements OnInit {
         name: this.task.name,
         points: this.task.points
       },
-      explanation: this.claimTaskForm.get('explanation').value,
-      isApproved: false
+      explanation: this.claimTaskForm.get('explanation').value
     }).subscribe(() => this.router.navigate(['/claimtasks']));
   }
 

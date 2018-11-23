@@ -7,31 +7,28 @@ import {FinishedTaskService} from '../_services/finished-task.service';
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.css']
+  styles: []
 })
 export class HomepageComponent implements OnInit {
-    currentuser: User
+    currentuser: User;
     finishedtasks: FinishedTask[];
     orders: Order[];
 
-
-
     constructor(private authenticationService: AuthenticationService,
-                private finishedtaskService: FinishedTaskService ,
-                private orderService: OrderService,
-                private router: Router) { }
+        private finishedtaskService: FinishedTaskService,
+        private orderService: OrderService) { }
 
-  ngOnInit() {
-      this.authenticationService.userData$.subscribe(user => {
-          this.currentuser = user;
-      });
+    ngOnInit() {
+        this.authenticationService.userData$.subscribe(user => {
+            this.currentuser = user;
+        });
 
-      this.finishedtaskService.getAll().subscribe(finishedtasks => {
-          this.finishedtasks = finishedtasks;
-      });
+        this.finishedtaskService.getAll().subscribe(finishedtasks => {
+            this.finishedtasks = finishedtasks;
+        });
 
-      this.orderService.getAll().subscribe(orders => {
-          this.orders = orders;
-      });
-  }
+        this.orderService.getAll().subscribe(orders => {
+            this.orders = orders;
+        });
+    }
 }

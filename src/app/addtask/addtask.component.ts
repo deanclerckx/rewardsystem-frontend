@@ -7,7 +7,7 @@ import { Task } from '../_models';
 @Component({
   selector: 'app-addtask',
   templateUrl: './addtask.component.html',
-  styleUrls: ['./addtask.component.css']
+  styles: []
 })
 export class AddtaskComponent implements OnInit {
   addTaskForm = new FormGroup({
