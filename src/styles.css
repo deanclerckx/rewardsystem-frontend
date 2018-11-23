@@ -1,5 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.css';
+
+body {
+     /* Compenseerd met de footer hoogte */
+    padding-bottom: 51.2px;
+}
+
+footer p {
+    color: rgba(0, 0, 0, 0.5);
+}
 
 .btn-admin {
     width: 150px !important;
@@ -13,15 +21,15 @@
 }
 
 .btnOrange:hover{
-    background-color: #FA9508
+    background-color: #FA9508;
 }
 
 .btnGreen:hover{
-    background-color: #70B838
+    background-color: #70B838;
 }
 
 .btnBlue:hover{
-    background-color: #04AEDB
+    background-color: #04AEDB;
 }
 
 .cursor-pointer {
