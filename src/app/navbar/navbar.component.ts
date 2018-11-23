@@ -20,8 +20,8 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.authenticationService.userData$.subscribe(user => {
-      this.currentuser = user;
       if (user != null) {
+        this.currentuser = user;
         this.hasUser = true;
 
         if (user.roles.includes('ADMIN')) {
@@ -32,7 +32,6 @@ export class NavbarComponent implements OnInit {
   }
 
   reload() {
-    window.location.reload();
     this.authenticationService.logout();
     this.router.navigate(['/login']);
   }
