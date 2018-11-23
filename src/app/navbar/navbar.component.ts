@@ -29,7 +29,6 @@ export class NavbarComponent implements OnInit {
         }
       }
     });
-
   }
 
   reload() {
