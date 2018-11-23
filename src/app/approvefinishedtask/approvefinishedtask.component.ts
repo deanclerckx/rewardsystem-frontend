@@ -53,7 +53,7 @@ export class ApprovefinishedtaskComponent implements OnInit {
     }).subscribe(() => {
       this.userService.update(<User>{
         id: this.user.id,
-        points: (this.user.points - this.finishedTask.task.points)
+        points: (this.user.points + this.finishedTask.task.points)
       }).subscribe((() => this.router.navigate(['/managefinishedtasks'])));
     });
   }
