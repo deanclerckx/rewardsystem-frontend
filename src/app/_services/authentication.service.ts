@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, interval } from 'rxjs';
 import { User } from '../_models';
 
 @Injectable()
@@ -16,6 +16,16 @@ export class AuthenticationService {
         if (user != null) {
             this.setUserData(user);
         }
+
+        interval(60000).subscribe(vec => {
+            let user = JSON.parse(localStorage.getItem('currentUser'));
+            let token = user.token;
+            this.http.get<User>(`${environment.apiUrl}/users/` + user._id).subscribe(user => {
+                user.token = token;
+                localStorage.setItem('currentUser', JSON.stringify(user));
+                this.setUserData(user);
+            });
+        });
     }
 
     login(username: string, password: string) {
