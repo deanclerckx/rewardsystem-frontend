@@ -32,7 +32,7 @@ const routes: Routes = [
   { path: 'manageorders', component: ManageordersComponent, canActivate: [RoleGuard], data: {expectedRole: 'ADMIN'}},
   { path: 'edittask/:id', component: EdittaskComponent, canActivate: [RoleGuard], data: {expectedRole: 'ADMIN'} },
   { path: 'editreward/:id', component: EditrewardComponent, canActivate: [RoleGuard], data: {expectedRole: 'ADMIN'} },
-  { path: 'homepage', component: HomepageComponent, canActivate: [AuthGuard] },
+  { path: 'overview', component: HomepageComponent, canActivate: [AuthGuard] },
   { path: 'admin', component: AdminComponent, canActivate: [RoleGuard], data: {expectedRole: 'ADMIN'}},
   { path: 'addtask', component: AddtaskComponent, canActivate: [RoleGuard], data: {expectedRole: 'ADMIN'} },
   { path: 'addreward', component: AddrewardComponent, canActivate: [RoleGuard], data: {expectedRole: 'ADMIN'} },
