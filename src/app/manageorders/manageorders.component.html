@@ -1,16 +1,18 @@
 <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-12">
-        <table class="table align-middle table-striped" style="vertical-align: middle;">
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Reward</th>
-              <th>User</th>
-              <th style="width: 10%;">Processed?</th>
-            </tr>
-          </thead>
-          <tbody style="vertical-align: center;">
+  <div class="row align-items-center">
+    <div class="col-lg-12">
+      <h2 class="text-center mb-5">Process orders</h2>
+
+      <table class="table align-middle table-striped" style="vertical-align: middle;">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Reward</th>
+            <th>User</th>
+            <th style="width: 10%;">Processed?</th>
+          </tr>
+        </thead>
+        <tbody style="vertical-align: center;">
           <tr *ngFor="let order of orders; let i = index">
             <td class="align-middle">{{ order.date | date:'dd/MM/yy - HH:mm' }}</td>
             <td class="align-middle">{{ order.reward.name }}</td>
@@ -20,8 +22,8 @@
                 <button *ngIf="!order.isProcessed" type="button" class="btn btn-outline-danger" (click)="toggleProcessed(order)"><i class="fas fa-check"></i></button>
             </td>
           </tr>
-          </tbody>
-        </table>
-      </div>
+        </tbody>
+      </table>
     </div>
   </div>
+</div>
