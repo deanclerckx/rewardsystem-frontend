@@ -25,10 +25,20 @@ export class HomepageComponent implements OnInit {
 
         this.finishedtaskService.getByUserId(this.currentUser.id).subscribe(finishedTasks => {
             this.finishedTasks = finishedTasks;
+
+            // Sorteer op datum
+            this.finishedTasks.sort((a, b) => {
+                return a.date > b.date ? -1 : a.date < b.date ? 1 : 0;
+            });
         });
 
         this.orderService.getByUserId(this.currentUser.id).subscribe(orders => {
             this.orders = orders;
+
+            // Sorteer op datum
+            this.orders.sort((a, b) => {
+                return a.date > b.date ? -1 : a.date < b.date ? 1 : 0;
+            });
         });
     }
 }
