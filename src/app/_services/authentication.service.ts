@@ -64,7 +64,6 @@ export class AuthenticationService {
     logout() {
         // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
-        const user = JSON.parse(localStorage.getItem('currentUser'));
         this.userData$.next(null);
     }
 }
