@@ -14,11 +14,11 @@
           </tr>
         </thead>
         <tbody style="vertical-align: center;">
-        <tr>
-          <td *ngIf="rewards?.length < 1">
-            There's no data
-          </td>
-        </tr>
+          <tr>
+            <td *ngIf="rewards?.length < 1" colspan="4">
+              There's no data
+            </td>
+          </tr>
           <tr *ngFor="let reward of rewards">
             <td class="align-middle">{{ reward.name }}</td>
             <td class="align-middle">{{ reward.points }}</td>

@@ -12,6 +12,11 @@
           </tr>
         </thead>
         <tbody style="vertical-align: center;">
+          <tr>
+            <td *ngIf="users?.length < 1" colspan="3">
+              There's no data
+            </td>
+          </tr>
           <tr *ngFor="let user of users; let i = index">
             <td class="align-middle">{{ i + 1 }}</td>
             <td class="align-middle">{{ user.firstName + " " + user.lastName  }}</td>
