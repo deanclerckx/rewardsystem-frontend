@@ -10,9 +10,9 @@ import {FinishedTaskService} from '../_services/finished-task.service';
   styles: []
 })
 export class HomepageComponent implements OnInit {
-    currentuser: User;
-    finishedtasks: FinishedTask[];
-    orders: Order[];
+    currentUser: User;
+    finishedTasks: FinishedTask[] = [];
+    orders: Order[] = [];
 
     constructor(private authenticationService: AuthenticationService,
         private finishedtaskService: FinishedTaskService,
@@ -20,14 +20,14 @@ export class HomepageComponent implements OnInit {
 
     ngOnInit() {
         this.authenticationService.userData$.subscribe(user => {
-            this.currentuser = user;
+            this.currentUser = user;
         });
 
-        this.finishedtaskService.getByUserId(this.currentuser.id).subscribe(finishedtasks => {
-            this.finishedtasks = finishedtasks;
+        this.finishedtaskService.getByUserId(this.currentUser.id).subscribe(finishedTasks => {
+            this.finishedTasks = finishedTasks;
         });
 
-        this.orderService.getByUserId(this.currentuser.id).subscribe(orders => {
+        this.orderService.getByUserId(this.currentUser.id).subscribe(orders => {
             this.orders = orders;
         });
     }
