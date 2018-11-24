@@ -5,16 +5,18 @@
 
       <table class="table align-middle table-striped" style="vertical-align: middle;">
         <thead>
-        <tr>
-          <th>Name</th>
-          <th>Points</th>
-        </tr>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Points</th>
+          </tr>
         </thead>
         <tbody style="vertical-align: center;">
-        <tr *ngFor="let user of users">
-          <td class="align-middle">{{ user.firstName + " " + user.lastName  }}</td>
-          <td class="align-middle">{{ user.points }}</td>
-        </tr>
+          <tr *ngFor="let user of users; let i = index">
+            <td class="align-middle">{{ i + 1 }}</td>
+            <td class="align-middle">{{ user.firstName + " " + user.lastName  }}</td>
+            <td class="align-middle">{{ user.points }}</td>
+          </tr>
         </tbody>
       </table>
     </div>
