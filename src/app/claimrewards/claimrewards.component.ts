@@ -4,6 +4,7 @@ import { Reward } from '../_models/reward';
 import { OrderService } from '../_services/order.service';
 import { User, Order } from '../_models';
 import { UserService, AlertService, AuthenticationService } from '../_services';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-claimrewards',
@@ -15,22 +16,25 @@ export class ClaimrewardsComponent implements OnInit {
   reward: Reward;
 
   constructor(public rewardService: RewardService, private orderService: OrderService, 
-    private userService: UserService, private alertService: AlertService, private authenticationService: AuthenticationService) { }
+    private userService: UserService,
+    private alertService: AlertService,
+    private authenticationService: AuthenticationService,
+    private modalService: NgbModal) { }
 
   ngOnInit() {
     this.rewardService.getAll().subscribe(rewards => {
       this.rewards = rewards;
 
-      // Sorteer alfabetisch
+      // Sorteer aflopend op punten
       this.rewards.sort((a, b) => {
-        const nameA = a.points.toString();
-        const nameB = b.points.toString();
+        const pointsA = a.points;
+        const pointsB = b.points;
 
-        if (nameA < nameB) {
-          return 1;
-        }
-        if (nameA > nameB) {
+        if (pointsA > pointsB) {
           return -1;
+        }
+        if (pointsA < pointsB) {
+          return 1;
         }
 
         return 0;
@@ -38,13 +42,22 @@ export class ClaimrewardsComponent implements OnInit {
     });
   }
 
-  orderReward(reward) {
-    //user ophalen
+  onClickOrderReward(content, reward: Reward) {
+    this.modalService.open(content, { centered: true }).result.then(
+      // Indien confirmed, order reward
+      () => this.orderReward(reward),
+      // Indien dismissed, doe niets
+      () => {}
+    );
+  }
+
+  private orderReward(reward) {
+    // User ophalen
     const user = JSON.parse(localStorage.getItem('currentUser'));
 
-    //alleen bestellen als de user genoeg punten heeft
+    // Alleen bestellen als de user genoeg punten heeft
     if (user.points >= reward.points) {
-      //order wegschrijven
+      // Order wegschrijven
       this.orderService.insert(<Order>{
         reward: {
           name: reward.name,
@@ -53,27 +66,26 @@ export class ClaimrewardsComponent implements OnInit {
         userKey: user._id
       }).subscribe();
 
-      let points = user.points - reward.points;
+      const points = user.points - reward.points;
 
-      //punten van de user aftrekken
+      // Punten van de user aftrekken
       this.userService.update(<User>{
         id: user._id,
         points: points
       }).subscribe();
 
-      //succes message
-      this.alertService.success('Order geplaatst!', true);
-
-      //user updaten
-      user.points = points;
-      localStorage.setItem("currentUser", JSON.stringify(user));
-      this.authenticationService.setUserData(user);
-    }
-    //anders error message
-    else {
-      console.log('test');
+      // Succes message
       document.body.scrollTop = document.documentElement.scrollTop = 0;
-      this.alertService.error("Niet genoeg points!");
+      this.alertService.success('Order placed.', true);
+
+      // User updaten
+      user.points = points;
+      localStorage.setItem('currentUser', JSON.stringify(user));
+      this.authenticationService.setUserData(user);
+    } else {
+      // Anders error message
+      document.body.scrollTop = document.documentElement.scrollTop = 0;
+      this.alertService.error('Not enough points.');
     }
   }
 }

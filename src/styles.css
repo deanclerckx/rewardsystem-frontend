@@ -41,6 +41,12 @@ footer p {
     cursor: default;
 }
 
-.img-reward{
+.img-reward {
     max-height: 200px;
+}
+
+.btn-order {
+    position: absolute;
+    bottom: 1.25rem;
+    right: 1.25rem;
 }
