@@ -22,10 +22,12 @@ import { ApprovefinishedtaskComponent } from './approvefinishedtask/approvefinis
 // Guards
 import { AuthGuard } from './_guards/auth.guard';
 import { RoleGuard } from './_guards/role.guard';
+import {LeaderboardComponent} from './leaderboard/leaderboard.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'claimrewards', component: ClaimrewardsComponent, canActivate: [AuthGuard] },
+    { path: 'leaderboard', component: LeaderboardComponent, canActivate: [AuthGuard] },
   { path: 'claimtasks', component: ClaimtasksComponent, canActivate: [AuthGuard] },
   { path: 'managetasks', component: ManagetasksComponent, canActivate: [RoleGuard], data: {expectedRole: 'ADMIN'} },
   { path: 'managerewards', component: ManagerewardsComponent, canActivate: [RoleGuard], data: {expectedRole: 'ADMIN'} },

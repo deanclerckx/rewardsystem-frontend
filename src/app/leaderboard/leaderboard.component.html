@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row align-items-center">
+    <div class="col-lg-12">
+      <h2 class="text-center mb-5">Leaderboard</h2>
+
+      <table class="table align-middle table-striped" style="vertical-align: middle;">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Points</th>
+        </tr>
+        </thead>
+        <tbody style="vertical-align: center;">
+        <tr *ngFor="let user of users">
+          <td class="align-middle">{{ user.firstName + " " + user.lastName  }}</td>
+          <td class="align-middle">{{ user.points }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -13,6 +13,11 @@
           </tr>
         </thead>
         <tbody style="vertical-align: center;">
+        <tr>
+          <td *ngIf="orders?.length < 1">
+            There's no data
+          </td>
+        </tr>
           <tr *ngFor="let order of orders; let i = index">
             <td class="align-middle">{{ order.date | date:'dd/MM/yy - HH:mm' }}</td>
             <td class="align-middle">{{ order.reward.name }}</td>

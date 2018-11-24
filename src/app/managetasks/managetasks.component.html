@@ -14,6 +14,11 @@
             </tr>
           </thead>
         <tbody style="vertical-align: center;">
+        <tr>
+          <td *ngIf="tasks?.length < 1">
+            There's no data
+          </td>
+        </tr>
           <tr *ngFor="let task of tasks">
             <td class="align-middle">{{ task.name }}</td>
             <td class="align-middle">{{ task.points }}</td>
