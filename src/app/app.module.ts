@@ -28,6 +28,7 @@ import { ClaimtaskComponent } from './claimtask/claimtask.component';
 import { ManageordersComponent } from './manageorders/manageorders.component';
 import { ManagefinishedtasksComponent } from './managefinishedtasks/managefinishedtasks.component';
 import { ApprovefinishedtaskComponent } from './approvefinishedtask/approvefinishedtask.component';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 
 
 
@@ -51,6 +52,7 @@ import { ApprovefinishedtaskComponent } from './approvefinishedtask/approvefinis
     ManageordersComponent,
     ManagefinishedtasksComponent,
     ApprovefinishedtaskComponent,
+    LeaderboardComponent,
   ],
   imports: [
     BrowserModule,
