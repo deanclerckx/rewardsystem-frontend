@@ -23,11 +23,11 @@ export class HomepageComponent implements OnInit {
             this.currentuser = user;
         });
 
-        this.finishedtaskService.getAll().subscribe(finishedtasks => {
+        this.finishedtaskService.getByUserId(this.currentuser.id).subscribe(finishedtasks => {
             this.finishedtasks = finishedtasks;
         });
 
-        this.orderService.getAll().subscribe(orders => {
+        this.orderService.getByUserId(this.currentuser.id).subscribe(orders => {
             this.orders = orders;
         });
     }

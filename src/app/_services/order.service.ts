@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
 import { Order } from '../_models/order';
+import {FinishedTask} from '../_models';
 
 @Injectable()
 export class OrderService {
@@ -16,6 +17,10 @@ export class OrderService {
 
   getAll(): Observable<Order[]> {
     return this.http.get<Order[]>(environment.apiUrl + this.ORDER_PATH);
+  }
+
+  getByUserId(userid: String): Observable<Order[]> {
+      return this.http.get<Order[]>(environment.apiUrl + this.ORDER_PATH + /user/ + userid);
   }
 
   insert(order: Order) {

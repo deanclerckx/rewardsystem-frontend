@@ -16,8 +16,8 @@ export class FinishedTaskService {
     return this.http.get<FinishedTask>(environment.apiUrl + this.TASKS_PATH + id);
   }
 
-  getAllByUserId(id: String): Observable<FinishedTask[]> {
-    return this.http.get<FinishedTask[]>(environment.apiUrl + this.TASKS_PATH + id);
+  getByUserId(userid: String): Observable<FinishedTask[]> {
+    return this.http.get<FinishedTask[]>(environment.apiUrl + this.TASKS_PATH + /user/ + userid);
   }
 
   getAll(): Observable<FinishedTask[]> {
