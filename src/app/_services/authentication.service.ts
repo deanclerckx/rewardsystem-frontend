@@ -12,7 +12,7 @@ export class AuthenticationService {
 
     constructor(private http: HttpClient) {
         const user = JSON.parse(localStorage.getItem('currentUser'));
-        console.log(user);
+
         if (user != null) {
             this.setUserData(user);
         }

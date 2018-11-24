@@ -23,7 +23,7 @@
           <a [routerLink]="['/admin']" class="nav-link" href="">Admin</a>
         </li>
         <li class="nav-item" *ngIf="hasUser">
-          <a (click)="reload()" class="nav-link" href="">Log out</a>
+          <a (click)="logout()" class="nav-link" href="">Log out</a>
         </li>
       </ul>
     </div>
