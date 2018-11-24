@@ -28,7 +28,7 @@
         <tr *ngFor="let finishedtask of (finishedtasks | slice:finishedtasks.length - 5)">
           <td class="align-middle">{{ finishedtask.task.name }}</td>
           <td class="align-middle">{{ finishedtask.task.points }}</td>
-          <td class="align-middle">{{ finishedtask.explanation }}</td>
+          <td class="align-middle overflow">{{ finishedtask.explanation }}</td>
           <td class="align-middle">{{ finishedtask.isApproved == null ? "Pending": (finishedtask.isApproved == true ? 'Approved' : 'Denied') }}</td>
         </tbody>
       </table>

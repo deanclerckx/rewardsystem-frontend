@@ -50,3 +50,10 @@ footer p {
     bottom: 1.25rem;
     right: 1.25rem;
 }
+
+.overflow{
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
