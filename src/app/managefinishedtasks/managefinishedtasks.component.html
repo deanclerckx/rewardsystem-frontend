@@ -18,10 +18,10 @@
               There's no data
             </td>
           </tr>
-          <tr *ngFor="let unApprovedFinishedTask of unApprovedFinishedTasks">
+          <tr *ngFor="let unApprovedFinishedTask of unApprovedFinishedTasks; let i = index">
             <td class="align-middle">{{ unApprovedFinishedTask.date | date:'dd/MM/yy - HH:mm' }}</td>
             <td class="align-middle">{{ unApprovedFinishedTask.task.name }}</td>
-            <td class="align-middle">TO DO</td>
+            <td class="align-middle" *ngIf="unApprovedFinishedTask.userName != null">{{ unApprovedFinishedTask.userName }}</td>
             <td>
               <a class="list-group-item cursor-pointer" routerLink="/approvefinishedtask/{{ unApprovedFinishedTask.id }}"><i class="fas fa-gavel text-primary"></i></a>
             </td>

@@ -3,6 +3,8 @@
     <div class="col-lg-12">
       <h2 class="text-center mb-5">Leaderboard</h2>
 
+      <p>Maandelijks leaderbord</p>
+
       <table class="table align-middle table-striped" style="vertical-align: middle;">
         <thead>
           <tr>
@@ -13,11 +15,11 @@
         </thead>
         <tbody style="vertical-align: center;">
           <tr>
-            <td *ngIf="users?.length < 1" colspan="3">
+            <td *ngIf="leaderbordUsers?.length < 1" colspan="3">
               There's no data
             </td>
           </tr>
-          <tr *ngFor="let user of users; let i = index">
+          <tr *ngFor="let user of leaderbordUsers; let i = index">
             <td class="align-middle">{{ i + 1 }}</td>
             <td class="align-middle">{{ user.firstName + " " + user.lastName  }}</td>
             <td class="align-middle">{{ user.points }}</td>

@@ -15,19 +15,24 @@ export class ManageordersComponent implements OnInit {
 
   ngOnInit() {
     this.orderService.getAll().subscribe(orders => {
-      this.orders = orders;
 
-      // User ophalen per order
-      for (const order of this.orders) {
+      for (let order of orders) {
+        //user in task zetten
         this.userService.getById(order.userKey).subscribe(user => {
-          this.users.push(user.firstName + ' ' + user.lastName);
+          order.userName = user.firstName + ' ' + user.lastName;
         });
       }
 
-      // Sorteer op datum
-      // this.orders.sort((a, b) => {
-      //   return a.date < b.date ? -1 : a.date > b.date ? 1 : 0;
-      // });
+      this.orders = orders;
+
+      // Sorteer op isProcessed
+      this.orders.sort((a, b) => {
+        if(a.isProcessed){
+          return 1;
+        }else{
+          return -1;
+        }
+      })
     });
   }
 

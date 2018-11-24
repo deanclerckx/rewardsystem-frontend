@@ -7,4 +7,5 @@ export class Order {
     userKey: String;
     date: Date;
     isProcessed: Boolean;
+    userName: String;
 }

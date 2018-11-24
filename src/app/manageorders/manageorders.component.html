@@ -21,7 +21,7 @@
           <tr *ngFor="let order of orders; let i = index">
             <td class="align-middle">{{ order.date | date:'dd/MM/yy - HH:mm' }}</td>
             <td class="align-middle">{{ order.reward.name }}</td>
-            <td class="align-middle">{{ users[i] }}</td>
+            <td class="align-middle">{{ order.userName }}</td>
             <td>
                 <button *ngIf="order.isProcessed" type="button" class="btn btn-outline-success" (click)="toggleProcessed(order)"><i class="fas fa-check"></i></button>
                 <button *ngIf="!order.isProcessed" type="button" class="btn btn-outline-danger" (click)="toggleProcessed(order)"><i class="fas fa-check"></i></button>

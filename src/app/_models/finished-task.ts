@@ -8,4 +8,5 @@ export class FinishedTask {
     explanation: string;
     isApproved: boolean;
     date: Date;
+    userName: String;
 }

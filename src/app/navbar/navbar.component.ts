@@ -26,7 +26,11 @@ export class NavbarComponent implements OnInit {
 
         if (user.roles.includes('ADMIN')) {
           this.isAdmin = true;
+        }else{
+          this.isAdmin = false;
         }
+      }else{
+        this.hasUser = false;
       }
     });
   }
