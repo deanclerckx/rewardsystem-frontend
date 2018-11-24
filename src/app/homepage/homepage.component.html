@@ -24,8 +24,8 @@
                     <td class="align-middle">{{ finishedTask.date | date:'dd/MM/yy - HH:mm'  }}</td>
                     <td class="align-middle overflow">{{ finishedTask.task.name }}</td>
                     <td class="align-middle overflow">{{ finishedTask.explanation }}</td>
-                    <td class="align-middle">{{ finishedTask.task.points }}</td>
-                    <td class="align-middle">{{ finishedTask.isApproved == null ? "Pending": (finishedTask.isApproved == true ? 'Approved' : 'Denied') }}</td>
+                    <td class="align-middle">{{ finishedTask.isApproved == null ? '?': (finishedTask.isApproved ? finishedTask.task.points : '0') }}</td>
+                    <td class="align-middle">{{ finishedTask.isApproved == null ? 'Pending': (finishedTask.isApproved == true ? 'Approved' : 'Denied') }}</td>
                 </tr>
             </tbody>
         </table>
@@ -49,7 +49,7 @@
                     <td class="align-middle">{{ order.date | date:'dd/MM/yy - HH:mm'  }}</td>
                     <td class="align-middle">{{ order.reward.name }}</td>
                     <td class="align-middle">{{ order.reward.points }}</td>
-                    <td class="align-middle">{{ order.isProcessed == true ? 'Processed' : 'Pending' }}</td>
+                    <td class="align-middle">{{ order.isProcessed ? 'Processed' : 'Pending' }}</td>
                 </tr>
             </tbody>
         </table>
