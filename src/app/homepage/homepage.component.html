@@ -4,55 +4,59 @@
         <h2 class="text-center">Your points: {{ currentUser.points }}</h2>
         <p class="text-center mb-5">Welcome {{ currentUser.firstName + " " + currentUser.lastName }}</p>
 
-        <table class="table align-middle table-striped mb-5" style="vertical-align: middle;">
-            <thead>
-                <tr>
-                    <th style="width: 15%;">Date</th>
-                    <th style="width: 27.5%;">Last 5 Finished Tasks</th>
-                    <th style="width: 27.5%;">Explanation</th>
-                    <th style="width: 15%;">Gained points</th>
-                    <th style="width: 15%;">Status</th>
-                </tr>
-            </thead>
-            <tbody style="vertical-align: center;">
-                <tr>
-                    <td *ngIf="!finishedTasks.length" colspan="5">
-                        There's no data
-                    </td>
-                </tr>
-                <tr *ngFor="let finishedTask of (finishedTasks | slice : 0 : 5)">
-                    <td class="align-middle">{{ finishedTask.date | date:'dd/MM/yy - HH:mm'  }}</td>
-                    <td class="align-middle overflow">{{ finishedTask.task.name }}</td>
-                    <td class="align-middle overflow">{{ finishedTask.explanation }}</td>
-                    <td class="align-middle">{{ finishedTask.isApproved == null ? '?': (finishedTask.isApproved ? finishedTask.task.points : '0') }}</td>
-                    <td class="align-middle">{{ finishedTask.isApproved == null ? 'Pending': (finishedTask.isApproved == true ? 'Approved' : 'Denied') }}</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="table-responsive mb-5">
+            <table class="table align-middle table-striped" style="vertical-align: middle;">
+                <thead>
+                    <tr>
+                        <th style="width: 15%;">Date</th>
+                        <th style="width: 27.5%;">Last 5 Finished Tasks</th>
+                        <th style="width: 27.5%;">Explanation</th>
+                        <th style="width: 15%;">Gained points</th>
+                        <th style="width: 15%;">Status</th>
+                    </tr>
+                </thead>
+                <tbody style="vertical-align: center;">
+                    <tr>
+                        <td *ngIf="!finishedTasks.length" colspan="5">
+                            There's no data
+                        </td>
+                    </tr>
+                    <tr *ngFor="let finishedTask of (finishedTasks | slice : 0 : 5)">
+                        <td class="align-middle">{{ finishedTask.date | date:'dd/MM/yy - HH:mm'  }}</td>
+                        <td class="align-middle overflow">{{ finishedTask.task.name }}</td>
+                        <td class="align-middle overflow">{{ finishedTask.explanation }}</td>
+                        <td class="align-middle">{{ finishedTask.isApproved == null ? '?': (finishedTask.isApproved ? finishedTask.task.points : '0') }}</td>
+                        <td class="align-middle">{{ finishedTask.isApproved == null ? 'Pending': (finishedTask.isApproved == true ? 'Approved' : 'Denied') }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-        <table class="table align-middle table-striped" style="vertical-align: middle;">
-            <thead>
-                <tr>
-                    <th style="width: 15%;">Date</th>
-                    <th style="width: 55%;">Last 5 Claimed rewards</th>
-                    <th style="width: 15%;">Spent Points</th>
-                    <th style="width: 15%;">Status</th>
-                </tr>
-            </thead>
-            <tbody style="vertical-align: center;">
-                <tr>
-                    <td *ngIf="!orders.length" colspan="4">
-                        There's no data
-                    </td>
-                </tr>
-                <tr *ngFor="let order of (orders | slice : 0 : 5)">
-                    <td class="align-middle">{{ order.date | date:'dd/MM/yy - HH:mm'  }}</td>
-                    <td class="align-middle">{{ order.reward.name }}</td>
-                    <td class="align-middle">{{ order.reward.points }}</td>
-                    <td class="align-middle">{{ order.isProcessed ? 'Processed' : 'Pending' }}</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table class="table align-middle table-striped" style="vertical-align: middle;">
+                <thead>
+                    <tr>
+                        <th style="width: 15%;">Date</th>
+                        <th style="width: 55%;">Last 5 Claimed rewards</th>
+                        <th style="width: 15%;">Spent Points</th>
+                        <th style="width: 15%;">Status</th>
+                    </tr>
+                </thead>
+                <tbody style="vertical-align: center;">
+                    <tr>
+                        <td *ngIf="!orders.length" colspan="4">
+                            There's no data
+                        </td>
+                    </tr>
+                    <tr *ngFor="let order of (orders | slice : 0 : 5)">
+                        <td class="align-middle">{{ order.date | date:'dd/MM/yy - HH:mm'  }}</td>
+                        <td class="align-middle">{{ order.reward.name }}</td>
+                        <td class="align-middle">{{ order.reward.points }}</td>
+                        <td class="align-middle">{{ order.isProcessed ? 'Processed' : 'Pending' }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
     </div>
   </div>

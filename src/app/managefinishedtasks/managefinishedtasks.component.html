@@ -3,31 +3,33 @@
     <div class="col-lg-12">
       <h2 class="text-center mb-5">Approve finished tasks</h2>
 
-      <table class="table align-middle table-striped" style="vertical-align: middle;">
-          <thead>
+      <div class="table-responsive">
+        <table class="table align-middle table-striped" style="vertical-align: middle;">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th style="width: 50%;">Task</th>
+                <th>User</th>
+                <th style="width: 6%;">Approve</th>
+              </tr>
+            </thead>
+          <tbody style="vertical-align: center;">
             <tr>
-              <th>Date</th>
-              <th style="width: 50%;">Task</th>
-              <th>User</th>
-              <th style="width: 6%;">Approve</th>
+              <td *ngIf="unApprovedFinishedTasks?.length < 1" colspan="4">
+                There's no data
+              </td>
             </tr>
-          </thead>
-        <tbody style="vertical-align: center;">
-          <tr>
-            <td *ngIf="unApprovedFinishedTasks?.length < 1" colspan="4">
-              There's no data
-            </td>
-          </tr>
-          <tr *ngFor="let unApprovedFinishedTask of unApprovedFinishedTasks; let i = index">
-            <td class="align-middle">{{ unApprovedFinishedTask.date | date:'dd/MM/yy - HH:mm' }}</td>
-            <td class="align-middle">{{ unApprovedFinishedTask.task.name }}</td>
-            <td class="align-middle" *ngIf="unApprovedFinishedTask.userName != null">{{ unApprovedFinishedTask.userName }}</td>
-            <td>
-              <a class="list-group-item cursor-pointer" routerLink="/approvefinishedtask/{{ unApprovedFinishedTask.id }}"><i class="fas fa-gavel text-primary"></i></a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+            <tr *ngFor="let unApprovedFinishedTask of unApprovedFinishedTasks; let i = index">
+              <td class="align-middle">{{ unApprovedFinishedTask.date | date:'dd/MM/yy - HH:mm' }}</td>
+              <td class="align-middle">{{ unApprovedFinishedTask.task.name }}</td>
+              <td class="align-middle" *ngIf="unApprovedFinishedTask.userName != null">{{ unApprovedFinishedTask.userName }}</td>
+              <td>
+                <a class="list-group-item cursor-pointer" routerLink="/approvefinishedtask/{{ unApprovedFinishedTask.id }}"><i class="fas fa-gavel text-primary"></i></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>

@@ -3,29 +3,31 @@
     <div class="col-lg-12">
       <h2 class="text-center mb-5">Claim tasks</h2>
       
-      <table class="table align-middle table-striped" style="vertical-align: middle;">
-        <thead>
-          <tr>
-            <th style="width: 75%;">Task</th>
-            <th style="width: 25%;">Gained points</th>
-            <th style="width: 25%;">Claim</th>
-          </tr>
-        </thead>
-        <tbody style="vertical-align: center;">
-          <tr>
-            <td *ngIf="tasks?.length < 1" colspan="3">
-              There's no data
-            </td>
-          </tr>
-          <tr *ngFor="let task of tasks">
-            <td class="align-middle">{{ task.name }}</td>
-            <td class="align-middle">{{ task.points }}</td>
-            <td>
-              <a class="list-group-item cursor-pointer" routerLink="/claimtask/{{ task.id }}"><i class="far fa-arrow-alt-circle-down text-primary"></i></a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-responsive">
+        <table class="table align-middle table-striped" style="vertical-align: middle;">
+          <thead>
+            <tr>
+              <th style="width: 75%;">Task</th>
+              <th style="width: 25%;">Gained points</th>
+              <th style="width: 25%;">Claim</th>
+            </tr>
+          </thead>
+          <tbody style="vertical-align: center;">
+            <tr>
+              <td *ngIf="tasks?.length < 1" colspan="3">
+                There's no data
+              </td>
+            </tr>
+            <tr *ngFor="let task of tasks">
+              <td class="align-middle">{{ task.name }}</td>
+              <td class="align-middle">{{ task.points }}</td>
+              <td>
+                <a class="list-group-item cursor-pointer" routerLink="/claimtask/{{ task.id }}"><i class="far fa-arrow-alt-circle-down text-primary"></i></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>

@@ -2,9 +2,10 @@
   <div class="container">
     <a class="navbar-brand" [routerLink]="['/']"><img style="height: 35px;" src="../assets/img/logo.png"></a>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" (click)="isCollapsed = !isCollapsed">
+    <button *ngIf="hasUser" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" (click)="isCollapsed = !isCollapsed">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarResponsive" [ngbCollapse]="isCollapsed" (click)="isCollapsed = !isCollapsed">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item" *ngIf="hasUser">

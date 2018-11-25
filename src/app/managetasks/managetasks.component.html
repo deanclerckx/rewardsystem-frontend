@@ -4,33 +4,36 @@
       <h2 class="text-center mb-5">Manage tasks</h2>
 
       <p><a [routerLink]="['/addtask']" class="list-group-item"><i class="fas fa-plus-circle"></i> Add new task</a></p>
-      <table class="table align-middle table-striped" style="vertical-align: middle;">
-          <thead>
+
+      <div class="table-responsive">
+        <table class="table align-middle table-striped" style="vertical-align: middle;">
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th style="width: 15%;">Gained points</th>
+                <th style="width: 7%;">Edit</th>
+                <th style="width: 7%;">Delete</th>
+              </tr>
+            </thead>
+          <tbody style="vertical-align: center;">
             <tr>
-              <th>Task</th>
-              <th style="width: 15%;">Gained points</th>
-              <th style="width: 7%;">Edit</th>
-              <th style="width: 7%;">Delete</th>
+              <td *ngIf="tasks?.length < 1" colspan="4">
+                There's no data
+              </td>
             </tr>
-          </thead>
-        <tbody style="vertical-align: center;">
-          <tr>
-            <td *ngIf="tasks?.length < 1" colspan="4">
-              There's no data
-            </td>
-          </tr>
-          <tr *ngFor="let task of tasks">
-            <td class="align-middle">{{ task.name }}</td>
-            <td class="align-middle">{{ task.points }}</td>
-            <td>
-              <a class="list-group-item cursor-pointer" routerLink="/edittask/{{ task.id }}"><i class="fas fa-edit text-primary"></i></a>
-            </td>
-            <td>
-              <a class="list-group-item cursor-pointer" (click)="onClickDeleteTask(content, task)"><i class="fas fa-trash-alt text-danger"></i></a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+            <tr *ngFor="let task of tasks">
+              <td class="align-middle">{{ task.name }}</td>
+              <td class="align-middle">{{ task.points }}</td>
+              <td>
+                <a class="list-group-item cursor-pointer" routerLink="/edittask/{{ task.id }}"><i class="fas fa-edit text-primary"></i></a>
+              </td>
+              <td>
+                <a class="list-group-item cursor-pointer" (click)="onClickDeleteTask(content, task)"><i class="fas fa-trash-alt text-danger"></i></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
