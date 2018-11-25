@@ -15,7 +15,7 @@ export class EditrewardComponent implements OnInit {
   editRewardForm = new FormGroup({
     name: new FormControl('', Validators.required),
     points: new FormControl('', [Validators.required, Validators.pattern('[0-9]+')]),
-    image: new FormControl('')
+    image: new FormControl('', Validators.required)
   });
 
   constructor(private rewardService: RewardService,
